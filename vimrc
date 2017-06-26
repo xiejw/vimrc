@@ -35,7 +35,7 @@ highlight Comment ctermfg=green
 " =============================================================================
 " vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }
 call plug#end()
 
 " vim-airline

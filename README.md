@@ -7,5 +7,9 @@
         git clone https://github.com/xiejw/vimrc.git ~/.vim
         ln -sf ~/.vim/vimrc ~/.vimrc
 
-- [Optional] Open vim and run `PlugInstall`. 
+- Open vim and run `:PlugInstall`.
 - Quit vim and open vim again.
+
+## Update
+After sync to head, run `:PlugStatus` to check the plugs status an execute
+`:PlugInstall` or `:PlugUpdate` if necessary.
