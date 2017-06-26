@@ -43,12 +43,40 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
+"" =============================================================================
+" Shows a list to select for most recent files.
+" Here we use the v:oldfiles to do the proxy.
+function! LoadRecentFiles()
+  let file_list = v:oldfiles
+  if len(file_list) == 0
+    echo "no files"
+    return
+  endif
+  let user_list = ['Choose file']
+  let c = 1
+  for file_path in file_list
+    let item = "" . c . ". " . file_path
+    call add(user_list, item)
+    let c += 1
+    if c == 10
+      break
+    endif
+  endfor
+  let answer = inputlist(user_list)
+  if answer == 0
+    return
+  endif
+  execute "e " . file_list[answer - 1]
+endfunction
+
 " =============================================================================
 " leader
 let mapleader = ","
 "" buffer next and previous
 nmap <silent> <leader>b :bn <CR>  
 nmap <silent> <leader>B :bp <CR>  
+"" List the old files to open
+nmap <silent> <leader>lb :call LoadRecentFiles()<CR>
 " nmap <silent> <leader>rt :call <SID>DelEmptyLinesEnd()<CR>
 " nmap <silent> <leader>rs :syntax sync fromstart<CR>
 " nmap <silent> <leader>r :redraw!<CR>:e<CR>

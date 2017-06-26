@@ -1,5 +1,7 @@
 # vim
 *.swp
+# vim-plug
+plugged/*/*
 
 # Binaries for programs and plugins
 *.exe
