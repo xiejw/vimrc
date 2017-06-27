@@ -12,6 +12,7 @@ set expandtab
 set cindent
 set ignorecase
 set infercase " rememer the case which has been typed so far when auto-complete.
+set novisualbell " if not, weird char on Ubuntu terminal.
 set showcmd
 set nu
 set ruler
@@ -78,23 +79,34 @@ function! LoadRecentFiles()
 endfunction
 
 " =============================================================================
+" Define a Func: Delete tailing white space before write.
+function! <SID>DelEmptyLinesEnd()
+  let l = line(".")
+  let c = col(".")
+  :%s/\s\+$//e
+  call cursor(l, c)
+endfunction
+autocmd FileType c,cpp,go,python,sh,vim
+  \ autocmd BufWritePre * :call <SID>DelEmptyLinesEnd()
+
+" =============================================================================
 " leader
 let mapleader = ","
-"" buffer next and previous
-nmap <silent> <leader>b :bn <CR>  
-nmap <silent> <leader>B :bp <CR>  
+"" Navigation for buffers
+nmap <silent> <leader>b :bn <CR>
+nmap <silent> <leader>B :bp <CR>
+nmap <silent> <leader>t :tabn <CR>
+nmap <silent> <leader>T :tabp <CR>
+"" Some switches for spell, paste, etc
+nmap <silent> <leader>p :set paste<CR>
+nmap <silent> <leader>np :set nopaste<CR>
+nmap <silent> <leader>s :set spell<CR>
+nmap <silent> <leader>ns :set nospell<CR>
 "" List the old files to open
 nmap <silent> <leader>lb :call LoadRecentFiles()<CR>
+"" Open files related.
+nmap <silent> <leader>ee :e %:p:h/
+nmap <silent> <leader>et :tabnew %:p:h/
 " nmap <silent> <leader>rt :call <SID>DelEmptyLinesEnd()<CR>
-" nmap <silent> <leader>rs :syntax sync fromstart<CR>
 " nmap <silent> <leader>r :redraw!<CR>:e<CR>
-" nmap <silent> <leader>w :w <CR>
-" nmap <silent> <leader>q Vgq <CR>
-" nmap <silent> <leader>te :tabnew<CR>
-" nmap <silent> <leader>ee :tabnew %:p:h/
-" nmap <silent> <leader>ev :e $MYVIMRC<CR>
-" nmap <silent> <leader>sv :so $MYVIMRC<CR>
-" nmap <silent> <leader>c  :w <CR>  : !make <CR><CR>
-" nmap <silent> <leader>p  :cd %:p:h<CR>
-" nmap <silent> <leader>t  :FZF<CR>
 " nmap <silent> <leader>b  :CtrlPBuffer<CR>
