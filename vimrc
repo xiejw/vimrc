@@ -79,6 +79,30 @@ function! LoadRecentFiles()
 endfunction
 
 " =============================================================================
+" Shows a list to select for all pending files in current repo, and then opens it.
+let g:load_pending_files_cmd='git diff --name-only'
+
+function! LoadPendingFiles()
+  let file_list = split(system(g:load_pending_files_cmd))
+  if len(file_list) == 0
+    echo "no pending files"
+    return
+  endif
+  let user_list = ['Choose file']
+  let c = 1
+  for file_path in file_list
+    let item = "" . c . ". " . file_path
+    call add(user_list, item)
+    let c += 1
+  endfor
+  let answer = inputlist(user_list)
+  if answer == 0
+    return
+  endif
+  execute "e " . file_list[answer - 1]
+endfunction
+
+" =============================================================================
 " Define a Func: Delete tailing white space before write.
 function! <SID>DelEmptyLinesEnd()
   let l = line(".")
@@ -104,6 +128,7 @@ nmap <silent> <leader>s :set spell<CR>
 nmap <silent> <leader>ns :set nospell<CR>
 "" List the old files to open
 nmap <silent> <leader>lb :call LoadRecentFiles()<CR>
+nmap <silent> <leader>ll :call LoadPendingFiles()<CR>
 "" Open files related.
 nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
