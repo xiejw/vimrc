@@ -28,20 +28,23 @@ set nospell "set spell spelllang=en_us
 set completeopt=longest,menuone " set completeopt-=preview
 
 " =============================================================================
-" Color
-"" This make the comment visible in terminal (usually default is blue).
-highlight Comment ctermfg=green
-
-" =============================================================================
 " vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }
+Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
+Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 call plug#end()
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
+
+" =============================================================================
+" Color
+"" This make the comment visible in terminal (usually default is blue).
+set background=dark " background must be set before colorscheme
+colorscheme molokai
+highlight Comment ctermfg=green
 
 "" =============================================================================
 " Shows a list to select for most recent files.
