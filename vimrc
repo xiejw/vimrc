@@ -35,16 +35,21 @@ Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 call plug#end()
 
 " vim-airline
+"" Setup the fonts for ubuntu. Follow https://github.com/powerline/fonts and
+"" select the font in termial profile (say xfce4-terminal with Droid Sans Mno
+"" Dotted for Powerline 9).
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
 " =============================================================================
 " Color
-"" This make the comment visible in terminal (usually default is blue).
 set background=dark " background must be set before colorscheme
 colorscheme molokai
-highlight Comment ctermfg=green
+"" This makes the comment visible in terminal (usually default is blue).
+highlight Comment ctermfg=DarkGreen
+"" This makes the visual selection more visible.
+hi visual ctermbg=DarkMagenta
 
 "" =============================================================================
 " Shows a list to select for most recent files.
