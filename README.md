@@ -1,6 +1,8 @@
 # My vim configuration
 
-## Install 
+## Instructions
+
+### Install
 
 - Clone and link the `vimrc`.
 
@@ -10,6 +12,6 @@
 - Open vim and run `:PlugInstall`.
 - Quit vim and open vim again.
 
-## Update
+### Update
 After sync to head, run `:PlugStatus` to check the plugs status an execute
 `:PlugInstall` or `:PlugUpdate` if necessary.
