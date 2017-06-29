@@ -33,6 +33,7 @@ set completeopt=longest,menuone " set completeopt-=preview
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
 Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
+Plug 'pseewald/vim-anyfold', {'commit': 'becb19a'}  " 2017-06
 call plug#end()
 
 " vim-airline
@@ -42,6 +43,9 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
+
+let anyfold_activate=1
+set foldlevel=0
 
 " =============================================================================
 " Color
@@ -72,7 +76,10 @@ nmap <silent> <leader>ll :call fns#LoadPendingFiles()<CR>
 nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
 
+" =============================================================================
+" Mappings.
 nmap <space> za
+nmap z<space> zA
 
 " =============================================================================
 " filetype related

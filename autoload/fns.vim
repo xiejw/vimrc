@@ -9,7 +9,7 @@ endfunction
 
 " =============================================================================
 " Shows a list to select for all pending files in current repo, and then opens it.
-let g:load_pending_files_cmd='git diff --name-only'
+let g:load_pending_files_cmd=get(g:, 'load_pending_files_cmd', 'git diff --name-only')
 
 function! fns#LoadPendingFiles()
   let file_list = split(system(g:load_pending_files_cmd))
