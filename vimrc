@@ -72,8 +72,11 @@ nmap <silent> <leader>ll :call fns#LoadPendingFiles()<CR>
 nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
 
+nmap <space> za
+
 " =============================================================================
-" leader
+" filetype related
 autocmd FileType c,cpp,go,python,sh,vim
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
+autocmd FileType vim :setlocal foldmethod=indent
