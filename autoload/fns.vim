@@ -8,6 +8,17 @@ function! fns#DelEmptyLinesEnd()
 endfunction
 
 " =============================================================================
+" Define a Func: Fold everywhere else except the current block under cursor.
+" TODO: Not fully functional. Needs improvement.
+function! fns#FoldEverywhereElse()
+  let l = line(".")
+  let c = col(".")
+  normal! zM
+  call cursor(l, c)
+  normal! zO
+endfunction
+
+" =============================================================================
 " Shows a list to select for all pending files in current repo, and then opens it.
 let g:load_pending_files_cmd=get(g:, 'load_pending_files_cmd', 'git diff --name-only')
 

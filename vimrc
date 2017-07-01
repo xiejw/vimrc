@@ -20,7 +20,7 @@ set vb
 set incsearch
 set encoding=utf8
 set nofoldenable
-set colorcolumn=100
+set colorcolumn=80
 set wildmode=longest:full " emacs-style filename matching
 set wildmenu
 filetype plugin indent on
@@ -48,13 +48,13 @@ let anyfold_activate=1
 set foldlevel=0
 
 " =============================================================================
-" Color
+" Color. See https://github.com/guns/xterm-color-table.vim
 set background=dark " background must be set before colorscheme
 colorscheme molokai
 "" This makes the comment visible in terminal (usually default is blue).
 highlight Comment ctermfg=DarkGreen
-"" This makes the visual selection more visible.
-hi visual ctermbg=DarkMagenta
+"" This makes the visual selection more visible. 166 is orange.
+hi visual ctermbg=166
 
 " =============================================================================
 " leader
@@ -75,11 +75,18 @@ nmap <silent> <leader>ll :call fns#LoadPendingFiles()<CR>
 "" Open files related.
 nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
+"" Surround `` around a word.
+nmap <silent> <leader>` bi`<esc>wea`<esc>
 
 " =============================================================================
 " Mappings.
 nmap <space> za
 nmap z<space> zA
+""" Open fold the block under cursor.
+nmap ZZ :call fns#FoldEverywhereElse()<CR>
+imap <tab> <c-x><c-p>
+""" Write file.
+map <c-s> <esc>:write<cr>
 
 " =============================================================================
 " filetype related
@@ -87,3 +94,5 @@ autocmd FileType c,cpp,go,python,sh,vim
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 autocmd FileType vim :setlocal foldmethod=indent
+
+autocmd FileType python :setlocal tw=80 colorcolumn=80
