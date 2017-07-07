@@ -34,6 +34,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
 Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 Plug 'pseewald/vim-anyfold', {'commit': 'becb19a'}  " 2017-06
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
+Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 call plug#end()
 
 " vim-airline
@@ -50,11 +52,14 @@ set foldlevel=0
 " =============================================================================
 " Color. See https://github.com/guns/xterm-color-table.vim
 set background=dark " background must be set before colorscheme
-colorscheme molokai
+colorscheme Tomorrow-Night
+
+""""" All the following settings are required for molokai.
+" colorscheme molokai
 "" This makes the comment visible in terminal (usually default is blue).
-highlight Comment ctermfg=DarkGreen
+"" highlight Comment ctermfg=DarkGreen
 "" This makes the visual selection more visible. 166 is orange.
-hi visual ctermbg=166
+"" hi visual ctermbg=166
 
 " =============================================================================
 " leader
