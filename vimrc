@@ -52,7 +52,8 @@ set foldlevel=0
 " =============================================================================
 " Color. See https://github.com/guns/xterm-color-table.vim
 set background=dark " background must be set before colorscheme
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+colorscheme monokai
 
 """"" All the following settings are required for molokai.
 " colorscheme molokai

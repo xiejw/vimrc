@@ -1,5 +1,6 @@
 # vim
 *.swp
+.netrwhist
 # vim-plug
 plugged
 
