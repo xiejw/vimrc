@@ -36,6 +36,7 @@ Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 Plug 'pseewald/vim-anyfold', {'commit': 'becb19a'}  " 2017-06
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
+Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12. Depends on Exuberant Ctags 5.5
 call plug#end()
 
 " vim-airline
@@ -46,8 +47,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
-let anyfold_activate=1
-set foldlevel=0
+" Tagbar
+let g:tagbar_width=50
 
 " =============================================================================
 " Color. See https://github.com/guns/xterm-color-table.vim
@@ -86,13 +87,10 @@ nmap <silent> <leader>` bi`<esc>wea`<esc>
 
 " =============================================================================
 " Mappings.
-nmap <space> za
-nmap z<space> zA
-""" Open fold the block under cursor.
-nmap ZZ :call fns#FoldEverywhereElse()<CR>
 imap <tab> <c-x><c-p>
 """ Write file.
 map <c-s> <esc>:write<cr>
+map <c-t> <esc>:TagbarToggle<cr>
 
 " =============================================================================
 " filetype related
