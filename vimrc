@@ -38,6 +38,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13f
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12. Depends on Exuberant Ctags 5.5
 Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
+Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 call plug#end()
 
 " vim-airline
