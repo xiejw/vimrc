@@ -90,7 +90,9 @@ nmap <silent> <leader>` bi`<esc>wea`<esc>
 imap <tab> <c-x><c-p>
 """ Write file.
 map <c-s> <esc>:write<cr>
+""" TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 map <c-t> <esc>:TagbarToggle<cr>
+map <c-j> <esc>:TagbarOpen fj<cr>
 
 " =============================================================================
 " filetype related
