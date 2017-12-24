@@ -37,6 +37,7 @@ Plug 'pseewald/vim-anyfold', {'commit': 'becb19a'}  " 2017-06
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12. Depends on Exuberant Ctags 5.5
+Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
 call plug#end()
 
 " vim-airline
@@ -49,12 +50,14 @@ set laststatus=2
 
 " Tagbar
 let g:tagbar_width=50
+let g:tagbar_sort=0
 
 " =============================================================================
 " Color. See https://github.com/guns/xterm-color-table.vim
 set background=dark " background must be set before colorscheme
 " colorscheme Tomorrow-Night
-colorscheme monokai
+" colorscheme monokai
+colorscheme dracula
 
 """"" All the following settings are required for molokai.
 " colorscheme molokai
@@ -92,7 +95,7 @@ imap <tab> <c-x><c-p>
 map <c-s> <esc>:write<cr>
 """ TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 map <c-t> <esc>:TagbarToggle<cr>
-map <c-j> <esc>:TagbarOpen fj<cr>
+map <c-j> <esc>:TagbarOpen fjc<cr>
 
 " =============================================================================
 " filetype related
