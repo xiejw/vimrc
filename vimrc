@@ -30,13 +30,17 @@ set completeopt=longest,menuone " set completeopt-=preview
 
 " =============================================================================
 " vim-plug
+"" Install
+""" TagBar: Depends on Exuberant Ctags 5.5
+"""" Ubuntu: sudo apt-get install exuberant-ctags
+"""" Gotags: mkdir -p /opt/go; GOPATH=/opt/go go get -u github.com/jstemmer/gotags
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
 Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 Plug 'pseewald/vim-anyfold', {'commit': 'becb19a'}  " 2017-06
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
-Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12. Depends on Exuberant Ctags 5.5
+Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12.
 Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 call plug#end()
@@ -52,6 +56,7 @@ set laststatus=2
 " Tagbar
 let g:tagbar_width=50
 let g:tagbar_sort=0
+call gotags#Init()  " Initialize the gotags configuration for tagbar.
 
 " =============================================================================
 " Color. See https://github.com/guns/xterm-color-table.vim
@@ -106,3 +111,5 @@ autocmd FileType c,cpp,go,python,sh,vim
 autocmd FileType vim :setlocal foldmethod=indent
 
 autocmd FileType python :setlocal tw=80 colorcolumn=80
+
+
