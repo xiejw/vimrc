@@ -43,6 +43,8 @@ Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12.
 Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
+Plug 'Yggdroot/indentLine'
+let g:indentLine_enabled = 0
 call plug#end()
 
 " vim-airline
@@ -102,6 +104,8 @@ map <c-s> <esc>:write<cr>
 """ TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 map <c-t> <esc>:TagbarToggle<cr>
 map <c-j> <esc>:TagbarOpen fjc<cr>
+""" IndentLines. See https://github.com/Yggdroot/indentLine
+map <c-i> <esc>:IndentLinesToggle<cr>
 
 " =============================================================================
 " filetype related
