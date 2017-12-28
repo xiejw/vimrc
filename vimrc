@@ -20,6 +20,7 @@ set vb
 set incsearch
 set encoding=utf8
 set nofoldenable
+set foldlevel=2
 set colorcolumn=80
 set wildmode=longest:full " emacs-style filename matching
 set wildmenu
@@ -35,30 +36,36 @@ set completeopt=longest,menuone " set completeopt-=preview
 """" Ubuntu: sudo apt-get install exuberant-ctags
 """" Gotags: mkdir -p /opt/go; GOPATH=/opt/go go get -u github.com/jstemmer/gotags
 call plug#begin('~/.vim/plugged')
+
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
+"" Setup the fonts for ubuntu. Follow https://github.com/powerline/fonts and
+"" select the font in termial profile (say xfce4-terminal with Droid Sans Mno
+"" Dotted for Powerline 9).
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_b = '%{strftime("%c")}'
+set laststatus=2
 Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 Plug 'pseewald/vim-anyfold', {'commit': 'becb19a'}  " 2017-06
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
+
 Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12.
-Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
-Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
-Plug 'Yggdroot/indentLine'
-let g:indentLine_enabled = 0
-call plug#end()
-
-" vim-airline
-"" Setup the fonts for ubuntu. Follow https://github.com/powerline/fonts and
-"" select the font in termial profile (say xfce4-terminal with Droid Sans Mno
-"" Dotted for Powerline 9).
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_b = '%{strftime("%c")}'
-set laststatus=2
-
-" Tagbar
 let g:tagbar_width=50
 let g:tagbar_sort=0
 call gotags#Init()  " Initialize the gotags configuration for tagbar.
+
+Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
+Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
+
+Plug 'gabrielelana/vim-markdown', {'for': ['markdown', 'rmd'], 'commit': '0db708c'}  " 2017-12
+let g:markdown_enable_folding = 1
+
+Plug 'Yggdroot/indentLine'
+let g:indentLine_enabled = 0
+
+call plug#end()
+
 
 " =============================================================================
 " Color. See https://github.com/guns/xterm-color-table.vim
