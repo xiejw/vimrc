@@ -50,9 +50,6 @@ set laststatus=2
 " {{{3 Molokai.
 Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 
-" {{{3 Anyfold.
-Plug 'pseewald/vim-anyfold', {'commit': 'becb19a'}  " 2017-06
-
 " {{{3 Fzf.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
@@ -134,7 +131,7 @@ autocmd FileType c,cpp,go,python,sh,vim
 
 autocmd FileType vim :setlocal foldmethod=indent
 
-autocmd FileType python :setlocal tw=80 colorcolumn=80
+autocmd FileType python :setlocal tw=80 colorcolumn=80 foldmethod=indent
 " {{{2 End.
 
 " vim: foldenable foldmethod=marker foldlevel=2
