@@ -82,16 +82,19 @@ call plug#end()
 set background=dark " background must be set before colorscheme
 colorscheme dracula
 
-" {{{3 Old Stuff.
-" colorscheme Tomorrow-Night
-" colorscheme monokai
-
-""""" All the following settings are required for molokai.
-" colorscheme molokai
+" {{{3 Color Adjust.
 "" This makes the comment visible in terminal (usually default is blue).
 "" highlight Comment ctermfg=DarkGreen
 "" This makes the visual selection more visible. 166 is orange.
 "" hi visual ctermbg=166
+"" This makes the Pop menu more visible. 166 is orange.
+hi Pmenu ctermbg=236
+hi PmenuSel ctermbg=166
+
+" {{{3 Old Stuff.
+" colorscheme Tomorrow-Night
+" colorscheme molokai
+
 " {{{2 End.
 
 " {{{1 Leaders.
