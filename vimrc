@@ -137,6 +137,11 @@ autocmd FileType c,cpp,go,python,sh,vim
 " {{{3 Vim.
 autocmd FileType vim :setlocal foldmethod=indent
 
+" {{{3 Go.
+autocmd FileType go :setlocal tw=80 colorcolumn=80
+autocmd FileType go :setlocal foldenable foldlevel=1 foldcolumn=2 foldnestmax=2
+autocmd FileType go :setlocal foldmethod=indent
+
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
 autocmd FileType python :setlocal foldenable foldlevel=1 foldcolumn=2
