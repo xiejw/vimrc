@@ -118,6 +118,7 @@ nmap <silent> <leader>` bi`<esc>wea`<esc>
 "
 " {{{1 Other Mappings.
 imap <tab> <c-x><c-p>
+nmap <space> za
 " {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 map <c-t> <esc>:TagbarToggle<cr>
 map <c-j> <esc>:TagbarOpen fjc<cr>
@@ -126,12 +127,51 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 " {{{2 End.
 
 " {{{1 Filetype Related.
+" {{{3 DelEmptyLinesEnd.
 autocmd FileType c,cpp,go,python,sh,vim
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
+" {{{3 Vim.
 autocmd FileType vim :setlocal foldmethod=indent
 
-autocmd FileType python :setlocal tw=80 colorcolumn=80 foldmethod=indent
+" {{{3 Python.
+autocmd FileType python :setlocal tw=80 colorcolumn=80
+autocmd FileType python :setlocal foldenable foldlevel=1 foldcolumn=2
+autocmd FileType python :setlocal foldmethod=expr foldexpr=GetPythonFold(v:lnum)
+
+function! GetPythonFold(lnum)
+  let line = getline(a:lnum)
+  let invisible_level = 2
+  let import_level = invisible_level
+
+  " 2 import ..
+  " 2 import ..
+  " ?
+  " 2 def foo():
+  " 2   print
+  "
+  " 1 class Foo:
+  " 2   def foo():
+  " 2     print
+
+  if line =~? '\v^\s*$'
+    return '='
+  elseif line =~? '\v^from.*import'
+    return import_level
+  elseif line =~? '\v^import'
+    return import_level
+  endif
+
+  let indent_level = min([indent(a:lnum) / &shiftwidth + 1, 3])
+
+  if line =~? '\v^def'
+    return '>2'
+  elseif line =~? '\v^\s*(def|class)'
+    return '>'. indent_level
+  else
+    return invisible_level
+
+endfunction
 " {{{2 End.
 
 " vim: foldenable foldmethod=marker foldlevel=2
