@@ -9,7 +9,9 @@ endfunction
 
 " =============================================================================
 " Shows a list to select for all pending files in current repo, and then opens it.
-let g:load_pending_files_cmd=get(g:, 'load_pending_files_cmd', 'git diff --name-only')
+"   let g:load_pending_files_cmd=get(g:, 'load_pending_files_cmd', 'git diff --name-only')
+" The following one prints not only pending files, but also staged.
+let g:load_pending_files_cmd=get(g:, 'load_pending_files_cmd', 'echo $(git diff --cached --name-only)  $(git diff  --name-only) | tr " " "\n" | sort| uniq')
 
 function! fns#LoadPendingFiles()
   let file_list = split(system(g:load_pending_files_cmd))

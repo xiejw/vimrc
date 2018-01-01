@@ -117,11 +117,14 @@ nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
 " {{{3 Surround `` around a word.
 nmap <silent> <leader>` bi`<esc>wea`<esc>
+" {{{4 FZF
+nmap <silent> <leader>z :FZF<cr>
 " {{{2 End.
 "
 " {{{1 Other Mappings.
 imap <tab> <c-x><c-p>
 nmap <space> za
+imap jk <esc>
 " {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 map <c-t> <esc>:TagbarToggle<cr>
 map <c-j> <esc>:TagbarOpen fjc<cr>
