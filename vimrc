@@ -71,8 +71,23 @@ let g:indentLine_enabled = 0
 call plug#end()
 
 " {{{1 Ctags.
-set tags=~/.ctags;.ctags
+" {{{3
 set notagrelative
+
+function! LoadTagFiles(golden_list)
+  let existed_list = []
+  for tag_file in a:golden_list
+    if filereadable(expand(tag_file))
+      call add(existed_list, tag_file)
+    endif
+  endfor
+  let final_list = join(existed_list, ';')
+  let &tags=final_list
+endfunction
+
+call LoadTagFiles(['~/.ctags', '.ctags'])
+
+" {{{2 End.
 
 " {{{1 Colors.
 " Color. See https://github.com/guns/xterm-color-table.vim
