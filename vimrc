@@ -33,10 +33,6 @@ set completeopt=longest,menuone " set completeopt-=preview
 
 " {{{1 Vim-Plug
 call plug#begin('~/.vim/plugged')
-" {{{3 Install Notes.
-""" TagBar: Depends on Exuberant Ctags 5.5
-"""" Ubuntu: sudo apt-get install exuberant-ctags
-"""" Gotags: mkdir -p /opt/go; GOPATH=/opt/go go get -u github.com/jstemmer/gotags
 
 " {{{3 Airline.
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
@@ -66,9 +62,6 @@ Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
 " {{{3 Current Word.
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 
-" {{{3 Markdown.
-Plug 'gabrielelana/vim-markdown', {'for': ['markdown', 'rmd'], 'commit': '0db708c'}  " 2017-12
-let g:markdown_enable_folding = 1
 
 " {{{3 IndentLine.
 Plug 'Yggdroot/indentLine'
@@ -144,6 +137,29 @@ autocmd FileType vim :setlocal foldmethod=indent
 autocmd FileType go :setlocal tw=80 colorcolumn=80
 autocmd FileType go :setlocal foldenable foldlevel=1 foldcolumn=2 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent
+
+" {{{3 Markdown.
+autocmd FileType markdown :setlocal tw=80 colorcolumn=80
+autocmd FileType markdown :setlocal foldenable foldlevel=2 foldcolumn=2
+autocmd FileType markdown :setlocal foldmethod=expr foldexpr=GetMarkdownFold(v:lnum)
+
+function! GetMarkdownFold(lnum)
+  let line = getline(a:lnum)
+
+  if line =~? '\v^(#)+ '
+    if line =~? '\v^# '
+      return '>1'
+    elseif line =~? '\v^## '
+      return '>2'
+    elseif line =~? '\v^### '
+      return '>3'
+    else
+      return '='
+    endif
+  else
+    return '='
+  endif
+endfunction
 
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
