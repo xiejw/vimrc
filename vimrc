@@ -78,14 +78,14 @@ function! LoadTagFiles(golden_list)
   let existed_list = []
   for tag_file in a:golden_list
     if filereadable(expand(tag_file))
-      call add(existed_list, tag_file)
+      call add(existed_list, expand(tag_file))
     endif
   endfor
   let final_list = join(existed_list, ';')
   let &tags=final_list
 endfunction
 
-call LoadTagFiles(['~/.ctags', '.ctags'])
+call LoadTagFiles(['.ctags', '~/.ctags'])
 
 " {{{2 End.
 
