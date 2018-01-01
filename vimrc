@@ -71,7 +71,8 @@ let g:indentLine_enabled = 0
 call plug#end()
 
 " {{{1 Ctags.
-set tags=.ctags;~/.ctags
+set tags=~/.ctags;.ctags
+set notagrelative
 
 " {{{1 Colors.
 " Color. See https://github.com/guns/xterm-color-table.vim
