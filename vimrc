@@ -130,7 +130,8 @@ nmap <silent> <leader>et :tabnew %:p:h/
 " {{{3 Surround `` around a word.
 nmap <silent> <leader>` bi`<esc>wea`<esc>
 " {{{4 FZF
-nmap <silent> <leader>z :FZF<cr>
+nmap <silent> <leader>zz :FZF<cr>
+nmap <silent> <leader>zt :Tags<cr>
 " {{{2 End.
 "
 " {{{1 Other Mappings.
