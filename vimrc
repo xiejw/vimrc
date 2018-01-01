@@ -70,6 +70,9 @@ let g:indentLine_enabled = 0
 " {{{2 End.
 call plug#end()
 
+" {{{1 Ctags.
+set tags=.ctags;~/.ctags
+
 " {{{1 Colors.
 " Color. See https://github.com/guns/xterm-color-table.vim
 set background=dark " background must be set before colorscheme
@@ -119,7 +122,7 @@ imap <tab> <c-x><c-p>
 nmap <space> za
 imap jk <esc>
 " {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
-map <c-t> <esc>:TagbarToggle<cr>
+"" map <c-t> <esc>:TagbarToggle<cr>
 map <c-j> <esc>:TagbarOpen fjc<cr>
 "" {{{3 IndentLines. See https://github.com/Yggdroot/indentLine
 map <c-i> <esc>:IndentLinesToggle<cr>
@@ -127,7 +130,7 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 
 " {{{1 Filetype Related.
 " {{{3 DelEmptyLinesEnd.
-autocmd FileType c,cpp,go,python,sh,vim
+autocmd FileType c,cpp,go,python,sh,vim,make
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 Vim.
