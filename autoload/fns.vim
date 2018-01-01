@@ -14,6 +14,14 @@ endfunction
 let g:load_pending_files_cmd=get(g:, 'load_pending_files_cmd', 'echo $(git diff --cached --name-only)  $(git diff  --name-only) | tr " " "\n" | sort| uniq')
 
 function! fns#LoadPendingFiles()
+  call fzf#run({
+        \ 'source': g:load_pending_files_cmd,
+        \ 'sink': 'e',
+        \ 'down': '40%'})
+endfunction
+
+" This function is deprecated in favor of fns#LoadPendingFiles.
+function! fns#LoadPendingFilesDeprecated()
   let file_list = split(system(g:load_pending_files_cmd))
   if len(file_list) == 0
     echo "no pending files"
