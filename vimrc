@@ -139,11 +139,6 @@ imap <tab> <c-x><c-p>
 nmap <space> za
 imap jk <esc>
 
-if &diff
-  nmap n ]c
-  nmap p [c
-  nmap <c-n> <esc>:qa<cr>
-endif
 " {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 "" map <c-t> <esc>:TagbarToggle<cr>
 map <c-j> <esc>:TagbarOpen fjc<cr>
@@ -174,6 +169,20 @@ autocmd FileType python :setlocal tw=80 colorcolumn=80
 autocmd FileType python :setlocal foldenable foldlevel=1 foldcolumn=2
 autocmd FileType python :setlocal foldmethod=expr foldexpr=indent#GetPythonFold(v:lnum)
 
+" {{{2 End.
+
+" {{{1 Diff relaed.
+if &diff
+  " {{{3 Mappings.
+  nmap n ]c
+  nmap p [c
+  nmap <c-n> <esc>:qa<cr>
+
+  " {{{3 Colors.
+  highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+  highlight DiffText   cterm=bold ctermfg=10 ctermbg=88
+
+endif
 " {{{2 End.
 
 " vim: foldenable foldmethod=marker foldlevel=2
