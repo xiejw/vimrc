@@ -179,8 +179,8 @@ if &diff
   nmap <c-n> <esc>:qa<cr>
 
   " {{{3 Colors.
-  highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
-  highlight DiffText   cterm=bold ctermfg=10 ctermbg=88
+  highlight DiffChange cterm=bold ctermfg=10 ctermbg=239
+  highlight DiffText   cterm=bold ctermfg=201 ctermbg=239
 
 endif
 " {{{2 End.
