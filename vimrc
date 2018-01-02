@@ -179,6 +179,11 @@ if &diff
   nmap <c-n> <esc>:qa<cr>
 
   " {{{3 Colors.
+
+  " DiffAdd - line was added
+  " DiffDelete - line was removed
+  " DiffChange - part of the line was changed (highlights the whole line)
+  " DiffText - the exact part of the line that changed
   highlight DiffChange cterm=bold ctermfg=10 ctermbg=239
   highlight DiffText   cterm=bold ctermfg=201 ctermbg=239
 
