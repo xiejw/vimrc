@@ -111,6 +111,7 @@ hi PmenuSel ctermbg=166
 
 " {{{1 Leaders.
 let mapleader = ","
+set timeoutlen=500
 " {{{3 Navigation for buffers.
 nmap <silent> <leader>b :bn! <CR>
 nmap <silent> <leader>B :bp! <CR>
@@ -136,7 +137,8 @@ nmap <silent> <leader>zt :Tags<cr>
 "
 " {{{1 Other Mappings.
 imap <tab> <c-x><c-p>
-nmap <space> za
+nmap <space> zO
+nmap <space><space> zX
 imap jk <esc>
 
 " {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
@@ -162,12 +164,12 @@ autocmd FileType go :setlocal foldmethod=indent
 " {{{3 Markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
 autocmd FileType markdown :setlocal foldenable foldlevel=2 foldcolumn=2
-autocmd FileType markdown :setlocal foldmethod=expr foldexpr=indent#GetMarkdownFold(v:lnum)
+autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
 
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
 autocmd FileType python :setlocal foldenable foldlevel=1 foldcolumn=2
-autocmd FileType python :setlocal foldmethod=expr foldexpr=indent#GetPythonFold(v:lnum)
+autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:lnum)
 
 " {{{2 End.
 
