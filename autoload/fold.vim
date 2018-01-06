@@ -16,18 +16,19 @@ function! fold#GetPythonFold(lnum)
   endif
 
   let pline = getline(a:lnum - 1)
-  let nline = getline(a:lnum + 1)
 
-  " 2 import ..
-  " 2 import ..
-  " ?
-  " 2 def foo():
-  " 2   print
+  " >3 import ..
+  "  3 import ..
+  "  3
+  " >1 def foo():
+  " >3   print
   "
-  " 1 class Foo:
-  " 2   def foo():
-  " 2     print
-
+  " >1 class Foo:
+  " >2   def foo():
+  " >3     print
+  "
+  "  1 def other_foo():
+  "  3   print
 
   let indent_level = min([indent(a:lnum) / &shiftwidth + 1, 3])
 
@@ -35,16 +36,14 @@ function! fold#GetPythonFold(lnum)
     return '>1'
   elseif pline =~? '\v^def'
     return '>'. invisible_level
-  elseif nline =~? '\v^def'
-    return '<'. invisible_level
   elseif line =~? '\v^\s*(def|class)'
     return '>'. indent_level
   elseif pline =~? '\v^\s*(def|class)'
     return '>'. invisible_level
   else
     return invisible_level
-
 endfunction
+
 
 function! fold#GetMarkdownFold(lnum)
   let line = getline(a:lnum)
