@@ -158,7 +158,7 @@ autocmd FileType vim :setlocal foldmethod=indent
 
 " {{{3 Go.
 autocmd FileType go :setlocal tw=80 colorcolumn=80
-autocmd FileType go :setlocal foldenable foldlevel=1 foldcolumn=2 foldnestmax=2
+autocmd FileType go :setlocal foldenable foldlevel=0 foldcolumn=2 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent
 
 " {{{3 Markdown.
