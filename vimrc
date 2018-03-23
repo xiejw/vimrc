@@ -150,7 +150,7 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 
 " {{{1 Filetype Related.
 " {{{3 DelEmptyLinesEnd.
-autocmd FileType c,cpp,go,python,sh,vim,make
+autocmd FileType c,cpp,go,python,sh,vim,make,markdown
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 Vim.
@@ -162,7 +162,8 @@ autocmd FileType go :setlocal foldenable foldlevel=0 foldcolumn=2 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent
 
 " {{{3 Markdown.
-autocmd FileType markdown :setlocal tw=80 colorcolumn=80
+" Set backspace=2 to make backspace normal in Markdown
+autocmd FileType markdown :setlocal tw=80 colorcolumn=80 backspace=2
 autocmd FileType markdown :setlocal foldenable foldlevel=2 foldcolumn=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
 
