@@ -8,6 +8,7 @@ set splitright
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+set backspace=2
 set expandtab
 set cindent
 set ignorecase
@@ -162,8 +163,7 @@ autocmd FileType go :setlocal foldenable foldlevel=0 foldcolumn=2 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent
 
 " {{{3 Markdown.
-" Set backspace=2 to make backspace normal in Markdown
-autocmd FileType markdown :setlocal tw=80 colorcolumn=80 backspace=2
+autocmd FileType markdown :setlocal tw=80 colorcolumn=80
 autocmd FileType markdown :setlocal foldenable foldlevel=2 foldcolumn=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
 
