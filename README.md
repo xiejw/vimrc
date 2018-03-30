@@ -1,5 +1,31 @@
 # My vim configuration
 
+## Cheat Sheet
+
+- `C-i`: Toggle IdentLines
+- `C-j`: Toggle Tagbar
+
+- `<leader>-b`: Switch to next buffer
+- `<leader>-B`: Switch to previous buffer
+- `<leader>-t`: Switch to next tab
+- `<leader>-T`: Switch to previous tab
+
+- `<leader>-s`: Open spell check
+- `<leader>-ns`: Close spell check
+- `<leader>-p`: Enable `paste`
+- `<leader>-np`: Disable `paste`
+
+- `<leader>-ll`: List local pending files (git)
+- `<leader>-lb`: List recent files.
+
+- `<leader>-zz`: List files via FZF.
+
+- `<leader>-ee`: Try to open a file in local folder in current tab.
+- `<leader>-et`: Try to open a file in local folder in new tab.
+
+- `jk`: <esc>
+- `` <leader>-` ``: Add `` ` `` to the start and end of the current word.
+
 ## Instructions
 
 ### Install
