@@ -8,6 +8,7 @@ set splitright
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+set backspace=2
 set expandtab
 set cindent
 set ignorecase
@@ -150,7 +151,7 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 
 " {{{1 Filetype Related.
 " {{{3 DelEmptyLinesEnd.
-autocmd FileType c,cpp,go,python,sh,vim,make
+autocmd FileType c,cpp,go,python,sh,vim,make,markdown
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 Vim.
