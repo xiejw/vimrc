@@ -138,7 +138,7 @@ nmap <silent> <leader>zt :Tags<cr>
 "
 " {{{1 Other Mappings.
 " Kill the current buffer without losing split.
-nmap <silent> <leader>bd :bp \| bd #<CR>
+nmap <silent> <leader>d :bp \| bd #<CR>
 imap <tab> <c-x><c-p>
 nmap <space> zO
 nmap <space><space> zX
