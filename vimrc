@@ -11,8 +11,8 @@ set softtabstop=2
 set backspace=2
 set expandtab
 set cindent
-set ignorecase
-set infercase " rememer the case which has been typed so far when auto-complete.
+set noignorecase
+set noinfercase  " case sensitive for auto-complete.
 set novisualbell " if not, weird char on Ubuntu terminal.
 set showcmd
 set nu
