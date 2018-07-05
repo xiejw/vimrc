@@ -174,6 +174,16 @@ autocmd FileType python :setlocal tw=80 colorcolumn=80
 autocmd FileType python :setlocal foldenable foldlevel=1 foldcolumn=2
 autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:lnum)
 
+" {{{3 Tex
+autocmd FileType plaintex :setlocal foldenable foldlevel=2 foldcolumn=2 foldmethod=marker
+" With cindent the gq does not work.
+autocmd FileType plaintex :setlocal nocindent
+" Customize the listing formating ^\li\s*
+autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\\\li\\s*
+
+" {{{3 Vim
+autocmd FileType vim :setlocal foldenable foldlevel=2 foldcolumn=2 foldmethod=marker
+
 " {{{2 End.
 
 " {{{1 Diff relaed.
@@ -195,4 +205,3 @@ if &diff
 endif
 " {{{2 End.
 
-" vim: foldenable foldmethod=marker foldlevel=2
