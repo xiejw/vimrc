@@ -153,7 +153,7 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 
 " {{{1 Filetype Related.
 " {{{3 DelEmptyLinesEnd.
-autocmd FileType c,cpp,go,python,sh,vim,make,markdown
+autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 Vim.
@@ -176,9 +176,10 @@ autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:
 
 " {{{3 Tex
 autocmd FileType plaintex :setlocal foldenable foldlevel=2 foldcolumn=2 foldmethod=marker
+autocmd FileType plaintex :setlocal tw=80
 " With cindent the gq does not work.
 autocmd FileType plaintex :setlocal nocindent
-" Customize the listing formating ^\li\s*
+" Customize the listing formating ^\li\s*. So ::help fo-table
 autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\\\li\\s*
 
 " {{{3 Vim
