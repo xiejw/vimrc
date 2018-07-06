@@ -2,7 +2,6 @@
 
 ## Cheat Sheet
 
-| ------------------| -----------------------------------------------------|
 | Key               | Comment                                              |
 | ------------------| -----------------------------------------------------|
 | `C-i`             | Toggle IdentLines                                    |
@@ -29,13 +28,12 @@
 | `jk`              | ESC                                                  |
 | ------------------| -----------------------------------------------------|
 | `` <leader>-` ``  | Add `` ` `` to the start and end of the current word.|
-| ------------------| -----------------------------------------------------|
+
 
 ## Folding Cheat Sheet
 
 This is the Vim built-in folding commands. Just copy here for quick reference.
 
-| ------------------| -----------------------------------------------------|
 | Keys              | Comment                                              |
 | ------------------| -----------------------------------------------------|
 | `zi`              | switch folding on or off                             |
@@ -58,7 +56,6 @@ This is the Vim built-in folding commands. Just copy here for quick reference.
 | `zM`              | closes all open folds.                               |
 | `zr`              | decreases the foldlevel by one.                      |
 | `zR`              | decreases the foldlevel to zero -- open everything.  |
-| ------------------| -----------------------------------------------------|
 
 
 ## Instructions
