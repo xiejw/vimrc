@@ -2,6 +2,7 @@
 
 ## Cheat Sheet
 
+| ------------------| -----------------------------------------------------|
 | Key               | Comment                                              |
 | ------------------| -----------------------------------------------------|
 | `C-i`             | Toggle IdentLines                                    |
@@ -28,29 +29,36 @@
 | `jk`              | ESC                                                  |
 | ------------------| -----------------------------------------------------|
 | `` <leader>-` ``  | Add `` ` `` to the start and end of the current word.|
+| ------------------| -----------------------------------------------------|
 
 ## Folding Cheat Sheet
 
-- `zi` switch folding on or off
-- `zv` expand folds to reveal cursor
--
-- `za` toggle current fold open/closed
-- `zA`  recursively open/close current fold
--
-- `zo` open current fold
-- `zO` recursively open current fold
-- `zc` close current fold
-- `zC`  recursively close current fold
+This is the Vim built-in folding commands. Just copy here for quick reference.
 
-- `zj` moves the cursor to the next fold.
-- `zk` moves the cursor to the previous fold.
-- `[z` move to start of open fold.
-- `]z` move to end of open fold.
-
-- `zm` increases the foldlevel by one.
-- `zM` closes all open folds.
-- `zr` decreases the foldlevel by one.
-- `zR` decreases the foldlevel to zero -- all folds will be open.
+| ------------------| -----------------------------------------------------|
+| Keys              | Comment                                              |
+| ------------------| -----------------------------------------------------|
+| `zi`              | switch folding on or off                             |
+| `zv`              | expand folds to reveal cursor                        |
+| ------------------| -----------------------------------------------------|
+| `za`              | toggle current fold open/closed                      |
+| `zA`              | recursively open/close current fold                  |
+| ------------------| -----------------------------------------------------|
+| `zo`              | open current fold                                    |
+| `zO`              | recursively open current fold                        |
+| `zc`              | close current fold                                   |
+| `zC`              | recursively close current fold                       |
+| ------------------| -----------------------------------------------------|
+| `zj`              | moves the cursor to the next fold.                   |
+| `zk`              | moves the cursor to the previous fold.               |
+| `[z`              | move to start of open fold.                          |
+| `]z`              | move to end of open fold.                            |
+| ------------------| -----------------------------------------------------|
+| `zm`              | increases the foldlevel by one.                      |
+| `zM`              | closes all open folds.                               |
+| `zr`              | decreases the foldlevel by one.                      |
+| `zR`              | decreases the foldlevel to zero -- open everything.  |
+| ------------------| -----------------------------------------------------|
 
 
 ## Instructions
@@ -76,6 +84,7 @@ After sync to head, run `:PlugStatus` to check the plugs status an execute
 Plugin `TagBar` depends on [Exuberant Ctags 5.5](http://ctags.sourceforge.net/).
 
 - Ubuntu: `sudo apt-get install exuberant-ctags`.
+- Mac OS: `brew install ctags`
 
 In addition, for Golang, install `Gotags`:
 
