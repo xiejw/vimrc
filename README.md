@@ -85,5 +85,6 @@ Plugin `TagBar` depends on [Exuberant Ctags 5.5](http://ctags.sourceforge.net/).
 
 In addition, for Golang, install `Gotags`:
 
-    mkdir -p /opt/go; GOPATH=/opt/go go get -u github.com/jstemmer/gotags
+    sudo mkdir -p /opt/go; sudo chrown $(whoami) /opt/go; \
+      GOPATH=/opt/go go get -u github.com/jstemmer/gotags
 
