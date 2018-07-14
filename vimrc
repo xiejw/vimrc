@@ -18,6 +18,8 @@ set showcmd
 set nu
 set ruler
 set vb
+set modeline
+set modelines=5 " Must be set to enable modeline
 set incsearch
 set encoding=utf8
 set nofoldenable
