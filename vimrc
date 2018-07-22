@@ -182,8 +182,8 @@ autocmd FileType plaintex :setlocal foldenable foldlevel=2 foldcolumn=2 foldmeth
 autocmd FileType plaintex :setlocal tw=80
 " With cindent the gq does not work.
 autocmd FileType plaintex :setlocal nocindent
-" Customize the listing formating ^\li\s*. So ::help fo-table
-autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\\\li\\s*
+" Customize the listing formating ^\*\s according OPmac. So ::help fo-table
+autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\*\\s
 
 " {{{3 Vim
 autocmd FileType vim :setlocal foldenable foldlevel=2 foldcolumn=2 foldmethod=marker
