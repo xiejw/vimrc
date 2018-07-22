@@ -165,6 +165,8 @@ autocmd FileType vim :setlocal foldmethod=indent
 autocmd FileType go :setlocal tw=80 colorcolumn=80
 autocmd FileType go :setlocal foldenable foldlevel=0 foldcolumn=2 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
+" The list \s*-\s* in comments. The comments '//' are not part of flp.
+autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\s*-\\s*
 
 " {{{3 Markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
