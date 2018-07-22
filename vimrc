@@ -170,6 +170,7 @@ autocmd FileType go :setlocal foldmethod=indent noexpandtab
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
 autocmd FileType markdown :setlocal foldenable foldlevel=2 foldcolumn=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
+autocmd FileType markdown :setlocal nocindent
 
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
