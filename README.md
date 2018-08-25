@@ -6,7 +6,7 @@
 | ------------------| -----------------------------------------------------|
 | `C-i`             | Toggle IdentLines                                    |
 | `C-j`             | Toggle Tagbar                                        |
-| ------------------|                                                      |
+| (next group)      |                                                      |
 | `<leader>-b`      | Switch to next buffer                                |
 | `<leader>-B`      | Switch to previous buffer                            |
 | `<leader>-t`      | Switch to next tab                                   |
