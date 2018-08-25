@@ -6,7 +6,7 @@
 | ------------------| -----------------------------------------------------|
 | `C-i`             | Toggle IdentLines                                    |
 | `C-j`             | Toggle Tagbar                                        |
-| ------------------| -----------------------------------------------------|
+| ------------------|                                                      |
 | `<leader>-b`      | Switch to next buffer                                |
 | `<leader>-B`      | Switch to previous buffer                            |
 | `<leader>-t`      | Switch to next tab                                   |
@@ -57,6 +57,10 @@ This is the Vim built-in folding commands. Just copy here for quick reference.
 | `zr`              | decreases the foldlevel by one.                      |
 | `zR`              | decreases the foldlevel to zero -- open everything.  |
 
+
+## Unusual Shortcuts
+
+    "*y     Copy the content to system clipboard.
 
 ## Instructions
 
