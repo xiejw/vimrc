@@ -24,6 +24,7 @@ set incsearch
 set encoding=utf8
 set nofoldenable
 set foldlevel=2
+set foldcolumn=0
 set colorcolumn=80
 set wildmode=longest:full " emacs-style filename matching
 set wildmenu
@@ -163,24 +164,24 @@ autocmd FileType vim :setlocal foldmethod=indent
 
 " {{{3 Go.
 autocmd FileType go :setlocal tw=80 colorcolumn=80
-autocmd FileType go :setlocal foldenable foldlevel=0 foldcolumn=2 foldnestmax=2
+autocmd FileType go :setlocal foldenable foldlevel=0 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
 " {{{3 Markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
-autocmd FileType markdown :setlocal foldenable foldlevel=2 foldcolumn=2
+autocmd FileType markdown :setlocal foldenable foldlevel=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
 autocmd FileType markdown :setlocal nocindent
 
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
-autocmd FileType python :setlocal foldenable foldlevel=1 foldcolumn=2
+autocmd FileType python :setlocal foldenable foldlevel=1
 autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:lnum)
 
 " {{{3 Tex
-autocmd FileType plaintex :setlocal foldenable foldlevel=2 foldcolumn=2 foldmethod=marker
+autocmd FileType plaintex :setlocal foldenable foldlevel=2 foldmethod=marker
 autocmd FileType plaintex :setlocal tw=80
 " With cindent the gq does not work.
 autocmd FileType plaintex :setlocal nocindent
@@ -188,7 +189,7 @@ autocmd FileType plaintex :setlocal nocindent
 autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\*\\s
 
 " {{{3 Vim
-autocmd FileType vim :setlocal foldenable foldlevel=2 foldcolumn=2 foldmethod=marker
+autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
 " {{{2 End.
 
