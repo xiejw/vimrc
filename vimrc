@@ -146,7 +146,7 @@ imap <tab> <c-x><c-p>
 nmap <space> zO
 nmap <space><space> zX
 imap jk <esc>
-inoremap <C-]> <C-\><C-o>:w<CR>
+inoremap <C-]> <C-\><C-o>:w<CR><esc>
 
 " {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 "" map <c-t> <esc>:TagbarToggle<cr>
