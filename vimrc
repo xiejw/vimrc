@@ -50,6 +50,9 @@ set laststatus=2
 " {{{3 Molokai.
 Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
 
+" {{{3 Swift-lang.
+Plug 'keith/swift.vim', {'commit': '5e330f0' }  " 2018-11
+
 " {{{3 Fzf.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
