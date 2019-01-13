@@ -179,6 +179,12 @@ autocmd FileType markdown :setlocal foldenable foldlevel=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
 autocmd FileType markdown :setlocal nocindent
 
+" {{{3 Makefile.
+autocmd FileType make :setlocal tw=80 colorcolumn=80
+autocmd FileType make :setlocal foldenable foldlevel=1
+autocmd FileType make :setlocal foldmethod=marker
+autocmd FileType make :setlocal nocindent
+
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
 autocmd FileType python :setlocal foldenable foldlevel=1
