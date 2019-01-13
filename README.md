@@ -29,9 +29,5 @@ Plugin `TagBar` depends on [Exuberant Ctags 5.5](http://ctags.sourceforge.net/).
 
 - Ubuntu: `sudo apt-get install exuberant-ctags`.
 - Mac OS: `brew install ctags`
-
-In addition, for Golang, install `Gotags`:
-
-    sudo mkdir -p /opt/go; sudo chrown $(whoami) /opt/go; \
-      GOPATH=/opt/go go get -u github.com/jstemmer/gotags
+- For [Gotags](https://github.com/jstemmer/gotags) (used by [Tagbar](http://majutsushi.github.io/tagbar/)): `GOPATH=~/.gotags go get -u github.com/jstemmer/gotags`.
 

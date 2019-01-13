@@ -61,7 +61,7 @@ Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12.
 let g:tagbar_width=50
 let g:tagbar_sort=0
-call gotags#Init()  " Initialize the gotags configuration for tagbar.
+call gotags#Init()  " Initialize the gotags configuration for tagbar. Defined in autoload/gotags.vim.
 
 " {{{3 Dracula.
 Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
