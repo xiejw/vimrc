@@ -20,7 +20,10 @@
 | Open       | `<leader>-ee`     | Try to open a file in local folder in current tab.   |
 |            | `<leader>-et`     | Try to open a file in local folder in new tab.       |
 | Special    | `jk`              | ESC                                                  |
+|            | `` C-[ ``         | ESC in insert mode (vim default).                    |
+|            | `` C-] ``         | Save file in insert mode and then Esc.               |
 |            | `` <leader>-` ``  | Add `` ` `` to the start and end of the current word.|
+|            | `` <leader>-d ``  | Kill buffer without losing split.                    |
 
 
 ## Folding Cheat Sheet
@@ -45,6 +48,10 @@ This is the Vim built-in folding commands. Just copy here for quick reference.
 |            | `zk`              | moves the cursor to the previous fold.               |
 |            | `[z`              | move to start of open fold.                          |
 |            | `]z`              | move to end of open fold.                            |
+| Reset      | `zX`              | undo manually opened and closed folds.               |
+|            | `zx`              | `zX` then `zv`.                                      |
+| Mapping    | `<space>`         | `zO`.                                                |
+|            | `<space><space>`  | `zX`.                                                |
 
 
 ## Unusual Shortcuts

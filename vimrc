@@ -110,10 +110,6 @@ colorscheme dracula
 hi Pmenu ctermbg=236
 hi PmenuSel ctermbg=166
 
-" {{{3 Old Stuff.
-" colorscheme Tomorrow-Night
-" colorscheme molokai
-
 " {{{2 End.
 
 " {{{1 Leaders.
@@ -135,11 +131,11 @@ nmap <silent> <leader>ll :call fns#LoadPendingFiles()<CR>
 " {{{3 Open files related.
 nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
-" {{{3 Surround `` around a word.
-nmap <silent> <leader>` bi`<esc>wea`<esc>
-" {{{4 FZF
+" {{{3 FZF
 nmap <silent> <leader>zz :FZF<cr>
 nmap <silent> <leader>zt :Tags<cr>
+" {{{3 Surround `` around a word.
+nmap <silent> <leader>` bi`<esc>wea`<esc>
 " {{{2 End.
 "
 " {{{1 Other Mappings.
@@ -160,11 +156,11 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 
 " {{{1 Filetype Related.
 " {{{3 DelEmptyLinesEnd.
-autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex
+autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex,swift
   \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 Vim.
-autocmd FileType vim :setlocal foldmethod=indent
+autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
 " {{{3 Go.
 autocmd FileType go :setlocal tw=80 colorcolumn=80
@@ -193,13 +189,9 @@ autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:
 " {{{3 Tex
 autocmd FileType plaintex :setlocal foldenable foldlevel=2 foldmethod=marker
 autocmd FileType plaintex :setlocal tw=80
-" With cindent the gq does not work.
 autocmd FileType plaintex :setlocal nocindent
 " Customize the listing formating ^\*\s according OPmac. So ::help fo-table
 autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\*\\s
-
-" {{{3 Vim
-autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
 " {{{2 End.
 
