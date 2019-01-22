@@ -23,7 +23,7 @@ set modelines=5 " Must be set to enable modeline
 set incsearch
 set encoding=utf8
 set nofoldenable
-set foldlevel=2
+set foldlevel=1
 set foldcolumn=0
 set colorcolumn=80
 set wildmode=longest:full " emacs-style filename matching
