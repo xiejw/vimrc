@@ -169,6 +169,11 @@ autocmd FileType go :setlocal foldmethod=indent noexpandtab
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
+" {{{3 Swift.
+autocmd FileType swift :setlocal tw=80 colorcolumn=80
+autocmd FileType swift :setlocal foldenable foldlevel=1
+autocmd FileType swift :setlocal foldmethod=indent
+
 " {{{3 Markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
 autocmd FileType markdown :setlocal foldenable foldlevel=2
