@@ -171,6 +171,7 @@ autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
 " {{{3 Swift.
 autocmd FileType swift :setlocal tw=100 colorcolumn=100
+autocmd FileType swift :setlocal shiftwidth=4
 autocmd FileType swift :setlocal foldenable foldlevel=1
 autocmd FileType swift :setlocal foldmethod=indent
 
