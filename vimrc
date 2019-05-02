@@ -193,7 +193,7 @@ autocmd FileType python :setlocal foldenable foldlevel=1
 autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:lnum)
 
 " {{{3 Tex
-autocmd FileType plaintex :setlocal foldenable foldlevel=2 foldmethod=marker
+autocmd FileType plaintex :setlocal foldenable foldlevel=1 foldmethod=marker
 autocmd FileType plaintex :setlocal tw=80
 autocmd FileType plaintex :setlocal nocindent
 " Customize the listing formating ^\*\s according OPmac. So ::help fo-table
