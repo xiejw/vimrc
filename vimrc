@@ -174,6 +174,7 @@ autocmd FileType swift :setlocal tw=100 colorcolumn=100
 autocmd FileType swift :setlocal shiftwidth=4
 autocmd FileType swift :setlocal foldenable foldlevel=1
 autocmd FileType swift :setlocal foldmethod=indent
+autocmd FileType swift :setlocal comments=:///,:// fo=tcrqo
 
 " {{{3 Markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
