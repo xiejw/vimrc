@@ -164,7 +164,7 @@ autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
 " {{{3 Go.
 autocmd FileType go :setlocal tw=80 colorcolumn=80
-autocmd FileType go :setlocal foldenable foldlevel=0 foldnestmax=2
+autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
@@ -190,7 +190,7 @@ autocmd FileType make :setlocal nocindent
 
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
-autocmd FileType python :setlocal foldenable foldlevel=1
+autocmd FileType python :setlocal foldlevel=1
 autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:lnum)
 
 " {{{3 Tex
