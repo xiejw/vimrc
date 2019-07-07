@@ -166,6 +166,7 @@ autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 autocmd FileType go :setlocal tw=80 colorcolumn=80
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
+autocmd FileType go :setlocal comments=:// fo=tcrqo
 " Automatically open a pair of bracket
 autocmd FileType go :noreab { {<esc>o}<esc>ko
 autocmd FileType go :noreab [ [ ]<left><left>
