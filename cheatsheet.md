@@ -6,6 +6,7 @@
 | ---------- | ------------------| -----------------------------------------------------|
 | Switches   | `C-i`             | Toggle IdentLines                                    |
 |            | `C-j`             | Toggle Tagbar                                        |
+|            | `<leader>-r`      | Refresh the file content                             |
 |            | `<leader>-s`      | Open spell check                                     |
 |            | `<leader>-ns`     | Close spell check                                    |
 |            | `<leader>-p`      | Enable `paste`                                       |

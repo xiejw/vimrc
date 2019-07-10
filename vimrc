@@ -115,6 +115,8 @@ hi PmenuSel ctermbg=166
 " {{{1 Leaders.
 let mapleader = ","
 set timeoutlen=500
+" {{{3 Refresh the file content.
+nmap <silent> <leader>r :e! <CR>
 " {{{3 Navigation for buffers.
 nmap <silent> <leader>b :bn! <CR>
 nmap <silent> <leader>B :bp! <CR>
