@@ -171,8 +171,6 @@ autocmd FileType go :setlocal foldmethod=indent noexpandtab
 autocmd FileType go :setlocal comments=:// fo=tcrqo
 " Automatically open a pair of bracket
 autocmd FileType go :noreab { {<esc>o}<esc>ko
-autocmd FileType go :noreab [ [ ]<left><left>
-autocmd FileType go :noreab ( ( )<left><left>
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
