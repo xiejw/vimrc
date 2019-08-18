@@ -165,7 +165,7 @@ autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex,swift
 autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
 " {{{3 Go.
-autocmd FileType go :setlocal tw=200 colorcolumn=80
+autocmd FileType go :setlocal tw=80 colorcolumn=80
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
 autocmd FileType go :setlocal comments=:// fo=tcrqo
