@@ -3,7 +3,6 @@ syntax on
 " {{{3 Configuration at global level.
 set mouse=a
 set nocompatible
-set autoread
 set splitright
 set shiftwidth=2
 set tabstop=2
@@ -32,6 +31,10 @@ filetype plugin indent on
 filetype plugin on
 set nospell "set spell spelllang=en_us
 set completeopt=longest,menuone " set completeopt-=preview
+" Ask vim to check file timestamp (checktime). Once detected new change, due
+" to `autoread`, the content will be loaded.
+au CursorHold * checktime
+set autoread
 
 " {{{2 End.
 
