@@ -106,7 +106,7 @@ colorscheme dracula
 
 " {{{3 Color Adjust.
 "" This makes the comment visible in terminal (usually default is blue).
-"" highlight Comment ctermfg=DarkGreen
+highlight Comment ctermfg=DarkGreen
 "" This makes the visual selection more visible. 166 is orange.
 "" hi visual ctermbg=166
 "" This makes the Pop menu more visible. 166 is orange.
@@ -189,6 +189,11 @@ autocmd FileType markdown :setlocal tw=80 colorcolumn=80
 autocmd FileType markdown :setlocal foldenable foldlevel=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
 autocmd FileType markdown :setlocal nocindent
+"" The following two lines are used number list.
+"" autoindent is used for indenting the third line and so on.
+"" The regexp is for number 1.\ and bullet -\
+autocmd FileType markdown :setlocal autoindent
+autocmd FileType markdown :setlocal formatoptions+=n flp=^\\s*\\(\\d\\+\\.\\\\|-\\)\\s
 
 " {{{3 Makefile.
 autocmd FileType make :setlocal tw=80 colorcolumn=80
