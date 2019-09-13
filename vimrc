@@ -167,6 +167,12 @@ autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex,swift
 " {{{3 Vim.
 autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
+" {{{3 Rust.
+autocmd FileType rust :setlocal tw=80 colorcolumn=80
+autocmd FileType rust :setlocal comments=:// fo=tcrqo
+" Automatically open a pair of bracket
+autocmd FileType rust :noreab { {<esc>o}<esc>ko
+
 " {{{3 Go.
 autocmd FileType go :setlocal tw=80 colorcolumn=80
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
