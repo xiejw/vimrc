@@ -107,6 +107,14 @@ colorscheme dracula
 " {{{3 Color Adjust.
 "" This makes the comment visible in terminal (usually default is blue).
 highlight Comment ctermfg=DarkGreen
+highlight rustCommentLineDoc ctermfg=DarkGreen
+"" Use this function to call the group name under cursoe.
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 "" This makes the visual selection more visible. 166 is orange.
 "" hi visual ctermbg=166
 "" This makes the Pop menu more visible. 166 is orange.
@@ -150,11 +158,14 @@ imap <tab> <c-x><c-p>
 nmap <space> zO
 nmap <space><space> zX
 imap jk <esc>
+nnoremap <C-j> <C-w><C-w>
 inoremap <C-]> <C-\><C-o>:w<CR><esc>
 
 " {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
 "" map <c-t> <esc>:TagbarToggle<cr>
-map <c-j> <esc>:TagbarOpen fjc<cr>
+" Disabled as of 2019-09.
+" map <c-j> <esc>:TagbarOpen fjc<cr>
+" End-Disabled
 "" {{{3 IndentLines. See https://github.com/Yggdroot/indentLine
 map <c-i> <esc>:IndentLinesToggle<cr>
 " {{{2 End.
@@ -169,17 +180,14 @@ autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
 " {{{3 Rust.
 autocmd FileType rust :setlocal tw=80 colorcolumn=80
-autocmd FileType rust :setlocal comments=:// fo=tcrqo
-" Automatically open a pair of bracket
-autocmd FileType rust :noreab { {<esc>o}<esc>ko
+autocmd FileType rust :setlocal comments^=:///
+autocmd FileType rust :setlocal fo=tcrqo
 
 " {{{3 Go.
 autocmd FileType go :setlocal tw=80 colorcolumn=80
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
 autocmd FileType go :setlocal comments=:// fo=tcrqo
-" Automatically open a pair of bracket
-autocmd FileType go :noreab { {<esc>o}<esc>ko
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
@@ -240,3 +248,8 @@ if &diff
 endif
 " {{{2 End.
 
+" Automatically open a pair of bracket. This pollutes the syntax highlight in
+" vim. So move them at the bottom.
+autocmd FileType rust :noreab { {<esc>o}<esc>ko
+autocmd FileType rust :noreab }{ {}
+autocmd FileType go :noreab { {<esc>o}<esc>ko
