@@ -178,11 +178,6 @@ autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex,swift
 " {{{3 Vim.
 autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
-" {{{3 Rust.
-autocmd FileType rust :setlocal tw=80 colorcolumn=80
-autocmd FileType rust :setlocal comments^=:///
-autocmd FileType rust :setlocal fo=tcrqo
-
 " {{{3 Go.
 autocmd FileType go :setlocal tw=100 colorcolumn=100
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
@@ -190,13 +185,6 @@ autocmd FileType go :setlocal foldmethod=indent noexpandtab
 autocmd FileType go :setlocal comments=:// fo=tcrqo
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
-
-" {{{3 Swift.
-autocmd FileType swift :setlocal tw=100 colorcolumn=100
-autocmd FileType swift :setlocal shiftwidth=4
-autocmd FileType swift :setlocal foldenable foldlevel=1
-autocmd FileType swift :setlocal foldmethod=indent
-autocmd FileType swift :setlocal comments=:///,:// fo=tcrqo
 
 " {{{3 Markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
