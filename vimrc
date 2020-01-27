@@ -249,8 +249,3 @@ if &diff
 endif
 " {{{2 End.
 
-" Automatically open a pair of bracket. This pollutes the syntax highlight in
-" vim. So move them at the bottom.
-autocmd FileType rust :noreab { {<esc>o}<esc>ko
-autocmd FileType rust :noreab }{ {}
-autocmd FileType go :noreab { {<esc>o}<esc>ko
