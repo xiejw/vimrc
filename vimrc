@@ -126,8 +126,9 @@ hi PmenuSel ctermbg=166
 " {{{1 Leaders.
 let mapleader = ","
 set timeoutlen=500
-" {{{3 Refresh the file content.
+" {{{3 Refresh or save the file content.
 nmap <silent> <leader>r :e! <CR>
+nmap <silent> <leader>s :update<CR>
 " {{{3 Navigation for buffers.
 nmap <silent> <leader>b :bn! <CR>
 nmap <silent> <leader>B :bp! <CR>
@@ -136,8 +137,8 @@ nmap <silent> <leader>T :tabp <CR>
 " {{{3 Some switches for spell, paste, etc.
 nmap <silent> <leader>p :set paste<CR>
 nmap <silent> <leader>np :set nopaste<CR>
-nmap <silent> <leader>s :set spell<CR>
-nmap <silent> <leader>ns :set nospell<CR>
+" nmap <silent> <leader>s :set spell<CR> " conflicted with save
+" nmap <silent> <leader>ns :set nospell<CR>
 " {{{3 List the files to open, such as recent files, pending files in git.
 nmap <silent> <leader>lb :call fns#LoadRecentFiles()<CR>
 nmap <silent> <leader>ll :call fns#LoadPendingFiles()<CR>
