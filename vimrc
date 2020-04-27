@@ -171,10 +171,10 @@ inoremap <C-]> <C-\><C-o>:w<CR><esc>
 map <c-i> <esc>:IndentLinesToggle<cr>
 " {{{2 End.
 
-" {{{1 Filetype Related.
+" {{{1 Filetype Related. (switch to always now.)
 " {{{3 DelEmptyLinesEnd.
-autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex,swift
-  \ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
+" autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex,swift
+autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 Vim.
 autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
