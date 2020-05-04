@@ -216,6 +216,8 @@ autocmd FileType plaintex :setlocal tw=80
 autocmd FileType plaintex :setlocal nocindent
 " Customize the listing formating ^\*\s according OPmac. So ::help fo-table
 autocmd FileType plaintex :setlocal formatoptions+=n flp=^\\*\\s
+" Autoindent is required for inserting the indent correctly.
+autocmd FileType plaintex :setlocal autoindent
 
 " {{{2 End.
 
