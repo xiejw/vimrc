@@ -204,6 +204,9 @@ autocmd FileType make :setlocal foldenable foldlevel=1
 autocmd FileType make :setlocal foldmethod=marker
 autocmd FileType make :setlocal nocindent
 
+" {{{3 Rust.
+autocmd FileType rust :setlocal tw=100 colorcolumn=100
+
 " {{{3 Python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
 autocmd FileType python :setlocal shiftwidth=4
