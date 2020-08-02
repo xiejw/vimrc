@@ -26,6 +26,14 @@
 |            | `` <leader>-` ``  | Add `` ` `` to the start and end of the current word.|
 |            | `` <leader>-d ``  | Kill buffer without losing split.                    |
 
+## Window Cheat Sheet
+
+| Category   | Keys              | Comment                                              |
+| ---------- | ------------------| -----------------------------------------------------|
+| Resize w   | `C-w >`           | increase width                                       |
+| Resize w   | `C-w <`           | reduce   width                                       |
+| Resize h   | `C-w +`           | increase height                                      |
+| Resize h   | `C-w -`           | reduce   height                                      |
 
 ## Folding Cheat Sheet
 
