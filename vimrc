@@ -50,12 +50,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
-" {{{3 Molokai.
-Plug 'tomasr/molokai', {'commit': 'c67bdfc' }  " 2017-06
-
-" {{{3 Swift-lang.
-Plug 'keith/swift.vim', {'commit': '5e330f0' }  " 2018-11
-
 " {{{3 Fzf.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
@@ -67,7 +61,7 @@ let g:tagbar_sort=0
 call gotags#Init()  " Initialize the gotags configuration for tagbar. Defined in autoload/gotags.vim.
 
 " {{{3 Dracula.
-Plug 'dracula/vim', {'commit': '6a5bf34'}  " 2017-12
+Plug 'dracula/vim', {'commit': 'b64b22a'} " 2020-08
 
 " {{{3 Current Word.
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
@@ -100,14 +94,17 @@ call LoadTagFiles(['.ctags', '~/.ctags'])
 " {{{2 End.
 
 " {{{1 Colors.
-" Color. See https://github.com/guns/xterm-color-table.vim
+"
+" disable italic fonts to avoid the background highligh bugs. See
+"   https://github.com/dracula/vim/issues/81
+let g:dracula_italic = 0
 set background=dark " background must be set before colorscheme
 colorscheme dracula
 
-" {{{3 Color Adjust.
+" {{{3 color adjustments.
 "" This makes the comment visible in terminal (usually default is blue).
 highlight Comment ctermfg=DarkGreen
-highlight rustCommentLineDoc ctermfg=DarkGreen
+
 "" Use this function to call the group name under cursoe.
 function! SynStack()
   if !exists("*synstack")
@@ -126,6 +123,7 @@ hi PmenuSel ctermbg=166
 " {{{1 Leaders.
 let mapleader = ","
 set timeoutlen=500
+
 " {{{3 Refresh or save the file content.
 nmap <silent> <leader>r :e! <CR>
 nmap <silent> <leader>s :update<CR>
