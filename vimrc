@@ -170,8 +170,8 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 " {{{2 End.
 
 " {{{1 Filetype Related. (switch to always now.)
+"
 " {{{3 DelEmptyLinesEnd.
-" autocmd FileType c,cpp,go,python,sh,vim,make,markdown,plaintex,swift
 autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 Vim.
@@ -223,22 +223,4 @@ autocmd FileType plaintex :setlocal autoindent
 
 " {{{2 End.
 
-" {{{1 Diff relaed.
-if &diff
-  " {{{3 Mappings.
-  nmap n ]c
-  nmap p [c
-  nmap <c-n> <esc>:qa<cr>
-
-  " {{{3 Colors.
-
-  " DiffAdd - line was added
-  " DiffDelete - line was removed
-  " DiffChange - part of the line was changed (highlights the whole line)
-  " DiffText - the exact part of the line that changed
-  highlight DiffChange cterm=bold ctermfg=10 ctermbg=239
-  highlight DiffText   cterm=bold ctermfg=201 ctermbg=239
-
-endif
-" {{{2 End.
 
