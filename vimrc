@@ -102,16 +102,9 @@ set background=dark " background must be set before colorscheme
 colorscheme dracula
 
 " {{{3 color adjustments.
-"" This makes the comment visible in terminal (usually default is blue).
+" change comment to darg green. makes it visible in terminal (usually is blue).
 highlight Comment ctermfg=DarkGreen
 
-"" Use this function to call the group name under cursoe.
-function! SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 "" This makes the visual selection more visible. 166 is orange.
 "" hi visual ctermbg=166
 "" This makes the Pop menu more visible. 166 is orange.
