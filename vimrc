@@ -128,18 +128,16 @@ nmap <silent> <leader>zt :Tags<cr>
 nmap <silent> <leader>` bi`<esc>wea`<esc>
 
 "
-" {{{1 Other Mappings.
-" Kill the current buffer without losing split.
+" {{{1 other Mappings.
+
+" kill the current buffer without losing split.
 nmap <silent> <leader>d :bp \| bd #<CR>
 imap <tab> <c-x><c-p>
 nmap <space> zO
 nmap <space><space> zX
 imap jk <esc>:update<CR>
-nnoremap <C-j> <C-w><C-w>
-inoremap <C-]> <C-\><C-o>:w<CR><esc>
-
 map <c-i> <esc>:IndentLinesToggle<cr>
-" {{{2 End.
+
 
 " {{{1 Filetype Related. (switch to always now.)
 "
