@@ -102,13 +102,12 @@ set background=dark " background must be set before colorscheme
 colorscheme dracula
 
 " {{{3 color adjustments.
-" change comment to darg green. makes it visible in terminal (usually is blue).
+"" change comment to darg green. makes it visible in terminal (usually is blue).
 highlight Comment ctermfg=DarkGreen
-
-"" This makes the visual selection more visible. 166 is orange.
-"" hi visual ctermbg=166
-"" This makes the Pop menu more visible. 166 is orange.
-hi Pmenu ctermbg=236
+"" make the visual selection more visible. 166 is orange.
+hi visual ctermbg=166
+"" makes the pop up menu more visible. 166 is orange.
+hi PmenuSel ctermfg=White
 hi PmenuSel ctermbg=166
 
 " {{{2 End.
