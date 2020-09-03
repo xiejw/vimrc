@@ -1,6 +1,9 @@
-" {{{1 General Settings.
+" vim: foldlevel=3
+
+" {{{1 general settings.
 syntax on
-" {{{3 Configuration at global level.
+
+" {{{3 configuration at global level.
 set mouse=a
 set nocompatible
 set splitright
@@ -36,12 +39,11 @@ set completeopt=longest,menuone " set completeopt-=preview
 au CursorHold * checktime
 set autoread
 
-" {{{2 End.
 
-" {{{1 Vim-Plug
+" {{{1 vim plugs
 call plug#begin('~/.vim/plugged')
 
-" {{{3 Airline.
+" {{{3 airline.
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
 "" Setup the fonts for ubuntu. Follow https://github.com/powerline/fonts and
 "" select the font in termial profile (say xfce4-terminal with Droid Sans Mno
@@ -50,50 +52,30 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
-" {{{3 Fzf.
+" {{{3 fzf.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 
-" {{{3 Tagbar.
+" {{{3 tagbar.
 Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12.
 let g:tagbar_width=50
 let g:tagbar_sort=0
 call gotags#Init()  " Initialize the gotags configuration for tagbar. Defined in autoload/gotags.vim.
 
-" {{{3 Dracula.
+" {{{3 dracula. see configuration in color adjustments part.
 Plug 'dracula/vim', {'commit': 'b64b22a'} " 2020-08
 
-" {{{3 Current Word.
+" {{{3 current Word.
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 
-
-" {{{3 IndentLine.
+" {{{3 indentLine.
 Plug 'Yggdroot/indentLine'
 let g:indentLine_enabled = 0
 
 " {{{2 End.
 call plug#end()
 
-" {{{1 Ctags.
-" {{{3
-set notagrelative
-
-function! LoadTagFiles(golden_list)
-  let existed_list = []
-  for tag_file in a:golden_list
-    if filereadable(expand(tag_file))
-      call add(existed_list, expand(tag_file))
-    endif
-  endfor
-  let final_list = join(existed_list, ';')
-  let &tags=final_list
-endfunction
-
-call LoadTagFiles(['.ctags', '~/.ctags'])
-
-" {{{2 End.
-
-" {{{1 Colors.
+" {{{1 colors.
 "
 " disable italic fonts to avoid the background highligh bugs. See
 "   https://github.com/dracula/vim/issues/81
