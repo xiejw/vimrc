@@ -123,6 +123,7 @@ nmap <silent> <leader>zt :Tags<cr>
 " {{{3 Surround `` around a word.
 nmap <silent> <leader>` bi`<esc>wea`<esc>
 " {{{2 End.
+
 "
 " {{{1 Other Mappings.
 " Kill the current buffer without losing split.
@@ -130,16 +131,10 @@ nmap <silent> <leader>d :bp \| bd #<CR>
 imap <tab> <c-x><c-p>
 nmap <space> zO
 nmap <space><space> zX
-imap jk <esc>
+imap jk <esc>:update<CR>
 nnoremap <C-j> <C-w><C-w>
 inoremap <C-]> <C-\><C-o>:w<CR><esc>
 
-" {{{3 TagBar. See https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt#L243
-"" map <c-t> <esc>:TagbarToggle<cr>
-" Disabled as of 2019-09.
-" map <c-j> <esc>:TagbarOpen fjc<cr>
-" End-Disabled
-"" {{{3 IndentLines. See https://github.com/Yggdroot/indentLine
 map <c-i> <esc>:IndentLinesToggle<cr>
 " {{{2 End.
 
@@ -148,10 +143,10 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 " {{{3 DelEmptyLinesEnd.
 autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
-" {{{3 Vim.
+" {{{3 vim.
 autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
 
-" {{{3 Go.
+" {{{3 go.
 autocmd FileType go :setlocal tw=100 colorcolumn=100
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
@@ -176,10 +171,10 @@ autocmd FileType make :setlocal foldenable foldlevel=1
 autocmd FileType make :setlocal foldmethod=marker
 autocmd FileType make :setlocal nocindent
 
-" {{{3 Rust.
+" {{{3 rust.
 autocmd FileType rust :setlocal tw=100 colorcolumn=100
 
-" {{{3 Python.
+" {{{3 python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
 autocmd FileType python :setlocal shiftwidth=4
 autocmd FileType python :setlocal foldlevel=1
@@ -195,6 +190,5 @@ autocmd FileType plaintex :setlocal nocindent
 autocmd FileType plaintex :setlocal formatoptions=tcq2
 autocmd FileType plaintex :setlocal autoindent
 
-" {{{2 End.
 
 
