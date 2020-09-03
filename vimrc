@@ -139,7 +139,7 @@ imap jk <esc>:update<CR>
 map <c-i> <esc>:IndentLinesToggle<cr>
 
 
-" {{{1 Filetype Related. (switch to always now.)
+" {{{1 filetype Related. (switch to always now.)
 "
 " {{{3 DelEmptyLinesEnd.
 autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
@@ -155,7 +155,7 @@ autocmd FileType go :setlocal comments=:// fo=tcrqo
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
-" {{{3 Markdown.
+" {{{3 markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
 autocmd FileType markdown :setlocal foldenable foldlevel=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
@@ -166,7 +166,7 @@ autocmd FileType markdown :setlocal nocindent
 autocmd FileType markdown :setlocal autoindent
 autocmd FileType markdown :setlocal formatoptions+=n flp=^\\s*\\(\\d\\+\\.\\\\|-\\)\\s
 
-" {{{3 Makefile.
+" {{{3 makefile.
 autocmd FileType make :setlocal tw=80 colorcolumn=80
 autocmd FileType make :setlocal foldenable foldlevel=1
 autocmd FileType make :setlocal foldmethod=marker
@@ -181,7 +181,7 @@ autocmd FileType python :setlocal shiftwidth=4
 autocmd FileType python :setlocal foldlevel=1
 autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:lnum)
 
-" {{{3 Tex
+" {{{3 plain tex
 autocmd FileType plaintex :setlocal foldenable foldlevel=1 foldmethod=marker
 autocmd FileType plaintex :setlocal tw=80
 autocmd FileType plaintex :setlocal nocindent
@@ -190,6 +190,4 @@ autocmd FileType plaintex :setlocal nocindent
 " Autoindent is required for inserting the indent correctly.
 autocmd FileType plaintex :setlocal formatoptions=tcq2
 autocmd FileType plaintex :setlocal autoindent
-
-
 
