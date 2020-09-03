@@ -60,7 +60,7 @@ Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12.
 let g:tagbar_width=50
 let g:tagbar_sort=0
-call gotags#Init()  " Initialize the gotags configuration for tagbar. Defined in autoload/gotags.vim.
+call gotags#Init()  " initialize the gotags configuration for tagbar. Defined in autoload/gotags.vim.
 
 " {{{3 dracula. see configuration in color adjustments part.
 Plug 'dracula/vim', {'commit': 'b64b22a'} " 2020-08
@@ -72,7 +72,6 @@ Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 Plug 'Yggdroot/indentLine'
 let g:indentLine_enabled = 0
 
-" {{{2 End.
 call plug#end()
 
 " {{{1 colors.
@@ -92,37 +91,41 @@ hi visual ctermbg=166
 hi PmenuSel ctermfg=White
 hi PmenuSel ctermbg=166
 
-" {{{2 End.
 
-" {{{1 Leaders.
+" {{{1 leaders.
 let mapleader = ","
 set timeoutlen=500
 
-" {{{3 Refresh or save the file content.
+" {{{3 refresh or save the file content.
 nmap <silent> <leader>r :e! <CR>
 nmap <silent> <leader>s :update<CR>
-" {{{3 Navigation for buffers.
+
+" {{{3 navigation for buffers.
 nmap <silent> <leader>b :bn! <CR>
 nmap <silent> <leader>B :bp! <CR>
 nmap <silent> <leader>t :tabn <CR>
 nmap <silent> <leader>T :tabp <CR>
-" {{{3 Some switches for spell, paste, etc.
+
+" {{{3 some switches for spell, paste, etc.
 nmap <silent> <leader>p :set paste<CR>
 nmap <silent> <leader>np :set nopaste<CR>
 " nmap <silent> <leader>s :set spell<CR> " conflicted with save
 " nmap <silent> <leader>ns :set nospell<CR>
-" {{{3 List the files to open, such as recent files, pending files in git.
+
+" {{{3 list the files to open, such as recent files, pending files in git.
 nmap <silent> <leader>lb :call fns#LoadRecentFiles()<CR>
 nmap <silent> <leader>ll :call fns#LoadPendingFiles()<CR>
-" {{{3 Open files related.
+
+" {{{3 open files related.
 nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
-" {{{3 FZF
+
+" {{{3 fzf
 nmap <silent> <leader>zz :FZF<cr>
 nmap <silent> <leader>zt :Tags<cr>
-" {{{3 Surround `` around a word.
+
+" {{{3 put `` around a word.
 nmap <silent> <leader>` bi`<esc>wea`<esc>
-" {{{2 End.
 
 "
 " {{{1 Other Mappings.
