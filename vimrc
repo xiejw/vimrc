@@ -145,7 +145,7 @@ map <c-i> <esc>:IndentLinesToggle<cr>
 autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 
 " {{{3 vim.
-autocmd FileType vim :setlocal foldenable foldlevel=2 foldmethod=marker
+autocmd FileType vim :setlocal foldlevel=2 foldmethod=marker
 
 " {{{3 go.
 autocmd FileType go :setlocal tw=100 colorcolumn=100
@@ -157,7 +157,7 @@ autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
 " {{{3 markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
-autocmd FileType markdown :setlocal foldenable foldlevel=2
+autocmd FileType markdown :setlocal foldlevel=2
 autocmd FileType markdown :setlocal foldmethod=expr foldexpr=fold#GetMarkdownFold(v:lnum)
 autocmd FileType markdown :setlocal nocindent
 "" The following two lines are used number list.
@@ -168,7 +168,7 @@ autocmd FileType markdown :setlocal formatoptions+=n flp=^\\s*\\(\\d\\+\\.\\\\|-
 
 " {{{3 makefile.
 autocmd FileType make :setlocal tw=80 colorcolumn=80
-autocmd FileType make :setlocal foldenable foldlevel=1
+autocmd FileType make :setlocal foldlevel=1
 autocmd FileType make :setlocal foldmethod=marker
 autocmd FileType make :setlocal nocindent
 
@@ -182,7 +182,7 @@ autocmd FileType python :setlocal foldlevel=1
 autocmd FileType python :setlocal foldmethod=expr foldexpr=fold#GetPythonFold(v:lnum)
 
 " {{{3 plain tex
-autocmd FileType plaintex :setlocal foldenable foldlevel=1 foldmethod=marker
+autocmd FileType plaintex :setlocal foldlevel=1 foldmethod=marker
 autocmd FileType plaintex :setlocal tw=80
 autocmd FileType plaintex :setlocal nocindent
 " Customize the listing formating ^\*\s according OPmac. So ::help fo-table
