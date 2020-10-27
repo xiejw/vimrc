@@ -155,6 +155,11 @@ autocmd FileType go :setlocal comments=:// fo=tcrqo
 " The list \s*-\s* in comments. The comments '//' are not part of flp.
 autocmd FileType go :setlocal formatoptions+=n flp=^\\s*-\\s*
 
+" {{{3 text.
+autocmd FileType text :setlocal tw=80 colorcolumn=80 nocindent
+autocmd FileType text :setlocal nocindent
+autocmd FileType text :setlocal smartindent
+
 " {{{3 markdown.
 autocmd FileType markdown :setlocal tw=80 colorcolumn=80
 autocmd FileType markdown :setlocal foldlevel=2
