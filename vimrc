@@ -147,6 +147,10 @@ autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
 " {{{3 vim.
 autocmd FileType vim :setlocal foldlevel=2 foldmethod=marker
 
+" {{[3 c
+autocmd BufRead,BufNewFile *.h set filetype=c
+autocmd FileType c :match Todo /\<_mut_\>/
+
 " {{{3 go.
 autocmd FileType go :setlocal tw=100 colorcolumn=100
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
