@@ -67,6 +67,7 @@ Plug 'dracula/vim', {'commit': 'b64b22a'} " 2020-08
 
 " {{{3 current Word.
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
+let g:vim_current_word#highlight_current_word = 0
 
 " {{{3 indentLine.
 Plug 'Yggdroot/indentLine'
