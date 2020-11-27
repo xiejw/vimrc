@@ -47,6 +47,7 @@ set autoread
 call plug#begin('~/.vim/plugged')
 
 " --> airline.
+"
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
 "" Setup the fonts for ubuntu. Follow https://github.com/powerline/fonts and
 "" select the font in termial profile (say xfce4-terminal with Droid Sans Mno
@@ -56,41 +57,51 @@ let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
 " --> fzf.
+"
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 
 " --> dracula. see configuration in color adjustments part.
 Plug 'dracula/vim', {'commit': 'b64b22a'} " 2020-08
+"
+" adjust: disable italic fonts to avoid the background highligh bugs. See
+"   https://github.com/dracula/vim/issues/81
+let g:dracula_italic = 0
 
 " --> current Word.
+"
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 let g:vim_current_word#highlight_current_word = 0
 
 " --> indentLine.
+"
 Plug 'Yggdroot/indentLine'
 let g:indentLine_enabled = 0
 
 call plug#end()
 
-" {{{1 colors.
+" ------------------------------------------------------------------------------
+" colors.
+" ------------------------------------------------------------------------------
+
+" --> dracula
 "
-" disable italic fonts to avoid the background highligh bugs. See
-"   https://github.com/dracula/vim/issues/81
-let g:dracula_italic = 0
 set background=dark " background must be set before colorscheme
 colorscheme dracula
 
-" {{{3 color adjustments.
-"" change comment to darg green. makes it visible in terminal (usually is blue).
+" --> color adjustments.
+"
+" change comment to darg green. makes it visible in terminal (usually is blue).
 highlight Comment ctermfg=DarkGreen
 "" make the visual selection more visible. 166 is orange.
 hi visual ctermbg=166
 "" makes the pop up menu more visible. 166 is orange.
-hi PmenuSel ctermfg=White
-hi PmenuSel ctermbg=166
+hi PmenuSel ctermfg=White ctermbg=166
 
 
-" {{{1 leaders.
+" ------------------------------------------------------------------------------
+" leaders.
+" ------------------------------------------------------------------------------
 let mapleader = ","
 set timeoutlen=500
 
