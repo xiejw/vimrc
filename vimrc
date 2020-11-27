@@ -46,8 +46,9 @@ set autoread
 " ------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-" --> airline.
-"
+" --------
+" airline.
+" --------
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
 "" Setup the fonts for ubuntu. Follow https://github.com/powerline/fonts and
 "" select the font in termial profile (say xfce4-terminal with Droid Sans Mno
@@ -56,25 +57,29 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
-" --> fzf.
-"
+" ----
+" fzf.
+" ----
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 
-" --> dracula. see configuration in color adjustments part.
+"---------
+" dracula.
+"---------
 Plug 'dracula/vim', {'commit': 'b64b22a'} " 2020-08
-"
 " adjust: disable italic fonts to avoid the background highligh bugs. See
 "   https://github.com/dracula/vim/issues/81
 let g:dracula_italic = 0
 
-" --> current Word.
-"
+" -------------
+" current Word.
+" -------------
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 let g:vim_current_word#highlight_current_word = 0
 
-" --> indentLine.
-"
+" -----------
+" indentLine.
+" -----------
 Plug 'Yggdroot/indentLine'
 let g:indentLine_enabled = 0
 
@@ -84,13 +89,15 @@ call plug#end()
 " colors.
 " ------------------------------------------------------------------------------
 
-" --> dracula
-"
+" --------
+" dracula.
+" --------
 set background=dark " background must be set before colorscheme
 colorscheme dracula
 
-" --> color adjustments.
-"
+" ------------------
+" color adjustments.
+" ------------------
 " change comment to darg green. makes it visible in terminal (usually is blue).
 highlight Comment ctermfg=DarkGreen
 "" make the visual selection more visible. 166 is orange.
@@ -98,47 +105,63 @@ hi visual ctermbg=166
 "" makes the pop up menu more visible. 166 is orange.
 hi PmenuSel ctermfg=White ctermbg=166
 
-
 " ------------------------------------------------------------------------------
 " leaders.
 " ------------------------------------------------------------------------------
 let mapleader = ","
 set timeoutlen=500
 
-" {{{3 refresh or save the file content.
+" ---------------------------------
+" refresh or save the file content.
+" ---------------------------------
 nmap <silent> <leader>r :e! <CR>
 nmap <silent> <leader>s :update<CR>
 
-" {{{3 navigation for buffers.
+" -----------------------
+" navigation for buffers.
+" -----------------------
 nmap <silent> <leader>b :bn! <CR>
 nmap <silent> <leader>B :bp! <CR>
 nmap <silent> <leader>t :tabn <CR>
 nmap <silent> <leader>T :tabp <CR>
 
-" {{{3 some switches for spell, paste, etc.
+" ------------------------------------
+" some switches for spell, paste, etc.
+" ------------------------------------
 nmap <silent> <leader>p :set paste<CR>
 nmap <silent> <leader>np :set nopaste<CR>
 " nmap <silent> <leader>s :set spell<CR> " conflicted with save
 " nmap <silent> <leader>ns :set nospell<CR>
 
-" {{{3 list the files to open, such as recent files, pending files in git.
+" -------------------------------------------------------------------
+" list the files to open, such as recent files, pending files in git.
+" -------------------------------------------------------------------
 nmap <silent> <leader>lb :call fns#LoadRecentFiles()<CR>
 nmap <silent> <leader>ll :call fns#LoadPendingFiles()<CR>
 
-" {{{3 open files related.
+" ----
+" fzf.
+" ----
+nmap <silent> <leader>zz :FZF<cr>
+
+" -------------------
+" open files related.
+" -------------------
 nmap <silent> <leader>ee :e %:p:h/
 nmap <silent> <leader>et :tabnew %:p:h/
 
-" {{{3 fzf
-nmap <silent> <leader>zz :FZF<cr>
-
-" {{{3 put `` around a word.
+" ---------------------
+" put `` around a word.
+" ---------------------
 nmap <silent> <leader>` bi`<esc>wea`<esc>
 
-"
-" {{{1 other Mappings.
+" ------------------------------------------------------------------------------
+" other Mappings.
+" ------------------------------------------------------------------------------
 
+" ---------------------------------------------
 " kill the current buffer without losing split.
+" ---------------------------------------------
 nmap <silent> <leader>d :bp \| bd #<CR>
 imap <tab> <c-x><c-p>
 nmap <space> zO
@@ -147,7 +170,9 @@ imap jk <esc>:update<CR>
 map <c-i> <esc>:IndentLinesToggle<cr>
 
 
-" {{{1 filetype Related. (switch to always now.)
+" ------------------------------------------------------------------------------
+" filetype Related.
+" ------------------------------------------------------------------------------
 "
 " {{{3 DelEmptyLinesEnd.
 autocmd BufWritePre * :call fns#DelEmptyLinesEnd()
@@ -188,9 +213,6 @@ autocmd FileType make :setlocal tw=80 colorcolumn=80
 autocmd FileType make :setlocal foldlevel=1
 autocmd FileType make :setlocal foldmethod=marker
 autocmd FileType make :setlocal nocindent
-
-" {{{3 rust.
-autocmd FileType rust :setlocal tw=100 colorcolumn=100
 
 " {{{3 python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
