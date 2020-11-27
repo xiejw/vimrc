@@ -1,9 +1,10 @@
-" vim: foldlevel=3
+" vim:
 
-" {{{1 general settings.
+" ------------------------------------------------------------------------------
+" general settings.
+" ------------------------------------------------------------------------------
 syntax on
 
-" {{{3 configuration at global level.
 set mouse=a
 set nocompatible
 set splitright
@@ -40,10 +41,12 @@ au CursorHold * checktime
 set autoread
 
 
-" {{{1 vim plugs
+" ------------------------------------------------------------------------------
+" vim plugs
+" ------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-" {{{3 airline.
+" --> airline.
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
 "" Setup the fonts for ubuntu. Follow https://github.com/powerline/fonts and
 "" select the font in termial profile (say xfce4-terminal with Droid Sans Mno
@@ -52,24 +55,18 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%c")}'
 set laststatus=2
 
-" {{{3 fzf.
+" --> fzf.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin', 'commit': 'b13fcfd'} " 2017-07
 Plug 'junegunn/fzf.vim', {'commit': '55f6bc8'}  " 2017-07
 
-" {{{3 tagbar.
-Plug 'majutsushi/tagbar', {'commit': '387bbad'}  " 2017-12.
-let g:tagbar_width=50
-let g:tagbar_sort=0
-call gotags#Init()  " initialize the gotags configuration for tagbar. Defined in autoload/gotags.vim.
-
-" {{{3 dracula. see configuration in color adjustments part.
+" --> dracula. see configuration in color adjustments part.
 Plug 'dracula/vim', {'commit': 'b64b22a'} " 2020-08
 
-" {{{3 current Word.
+" --> current Word.
 Plug 'dominikduda/vim_current_word', {'commit': '58eac40'}  " 2017-12
 let g:vim_current_word#highlight_current_word = 0
 
-" {{{3 indentLine.
+" --> indentLine.
 Plug 'Yggdroot/indentLine'
 let g:indentLine_enabled = 0
 
@@ -123,7 +120,6 @@ nmap <silent> <leader>et :tabnew %:p:h/
 
 " {{{3 fzf
 nmap <silent> <leader>zz :FZF<cr>
-nmap <silent> <leader>zt :Tags<cr>
 
 " {{{3 put `` around a word.
 nmap <silent> <leader>` bi`<esc>wea`<esc>
