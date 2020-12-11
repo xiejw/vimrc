@@ -18,7 +18,7 @@ set noignorecase
 set noinfercase  " case sensitive for auto-complete.
 set novisualbell " if not, weird char on Ubuntu terminal.
 set showcmd
-set nu
+set nu rnu  " hybrid line numbers
 set ruler
 set vb
 set modeline
