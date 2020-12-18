@@ -98,6 +98,8 @@ colorscheme dracula
 " ------------------
 " color adjustments.
 " ------------------
+" define a special group for some languages, used in c, etc.
+highlight MyCKeyword ctermbg=DarkMagenta ctermfg=Black
 " change comment to darg green. makes it visible in terminal (usually is blue).
 highlight Comment ctermfg=DarkGreen
 "" make the visual selection more visible. 166 is orange.
@@ -182,7 +184,7 @@ autocmd FileType vim :setlocal foldlevel=2 foldmethod=marker
 
 " {{[3 c
 autocmd BufRead,BufNewFile *.h set filetype=c
-autocmd FileType c :match Todo /\<_mut_\|OK\|ERROR\>/
+autocmd FileType c :match MyCKeyword /\<_mut_\|OK\|ERROR\>/
 
 " {{{3 go.
 autocmd FileType go :setlocal tw=100 colorcolumn=100
