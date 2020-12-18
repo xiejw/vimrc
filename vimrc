@@ -182,7 +182,7 @@ autocmd FileType vim :setlocal foldlevel=2 foldmethod=marker
 
 " {{[3 c
 autocmd BufRead,BufNewFile *.h set filetype=c
-autocmd FileType c :match Todo /\<_mut_\>/
+autocmd FileType c :match Todo /\<_mut_\|OK\|ERROR\>/
 
 " {{{3 go.
 autocmd FileType go :setlocal tw=100 colorcolumn=100
