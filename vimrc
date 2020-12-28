@@ -18,7 +18,8 @@ set noignorecase
 set noinfercase  " case sensitive for auto-complete.
 set novisualbell " if not, weird char on Ubuntu terminal.
 set showcmd
-set nu rnu  " hybrid line numbers
+set nu
+set cursorline
 set ruler
 set vb
 set modeline
@@ -98,6 +99,8 @@ colorscheme dracula
 " ------------------
 " color adjustments.
 " ------------------
+" define color for current line number. `set cursorline` must be set.
+hi CursorLineNR ctermfg=Cyan
 " define a special group for some languages, used in c, etc.
 highlight MyCKeyword ctermbg=DarkMagenta ctermfg=Black
 " change comment to darg green. makes it visible in terminal (usually is blue).
