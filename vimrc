@@ -187,7 +187,7 @@ autocmd FileType vim :setlocal foldlevel=2 foldmethod=marker
 " {{[3 c
 autocmd BufRead,BufNewFile *.h set filetype=c
 autocmd FileType c :match MyCKeyword /\<_mut_\|OK\|ERROR\>/
-autocmd FileType c :set shiftwidth=8 tabstop=8 softtabstop=8
+autocmd FileType c :setlocal shiftwidth=8 tabstop=8 softtabstop=8
 
 " {{{3 go.
 autocmd FileType go :setlocal tw=100 colorcolumn=100
@@ -218,6 +218,7 @@ autocmd FileType make :setlocal tw=80 colorcolumn=80
 autocmd FileType make :setlocal foldlevel=1
 autocmd FileType make :setlocal foldmethod=marker
 autocmd FileType make :setlocal nocindent
+autocmd FileType make :setlocal shiftwidth=8 tabstop=8 softtabstop=8
 
 " {{{3 python.
 autocmd FileType python :setlocal tw=80 colorcolumn=80
