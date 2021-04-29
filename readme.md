@@ -11,7 +11,7 @@ See [here](cheatsheet.md).
 - Clone and link the `vimrc`.
 
         cd ~/Workspace
-        git clone https://github.com/xiejw/vimrc.git
+        git clone git@github.com:xiejw/vimrc.git
         ln -sf ~/Workspace/vimrc ~/.vim
         ln -sf ~/.vim/vimrc ~/.vimrc
 
