@@ -186,7 +186,7 @@ autocmd FileType vim :setlocal foldlevel=2 foldmethod=marker
 
 " {{[3 c
 autocmd BufRead,BufNewFile *.h set filetype=c
-autocmd FileType c :match MyCKeyword /\<_mut_\|OK\|ERROR\>/
+" autocmd FileType c :match MyCKeyword /\<_mut_\|OK\|ERROR\>/
 autocmd FileType c :setlocal shiftwidth=8 tabstop=8 softtabstop=8
 
 " {{{3 go.
