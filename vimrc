@@ -48,6 +48,16 @@ set autoread
 call plug#begin('~/.vim/plugged')
 
 " --------
+" Tiled Window Management for Vim, like dwm
+"
+" C-N Creates a new window and place it in the master pane [M] & stacks all previous windows in the stacked pane [S]
+" C-C Close the current window if no unsaved changes
+" C-J Jumps to next window (clockwise)
+" C-K Jumps to previous window (anti-clockwise)
+" C-Space Focus the current window, that is, place it in the master pane [M] & stacks all other windows in the stacked pane [S]
+" --------
+Plug 'spolu/dwm.vim'
+" --------
 " airline.
 " --------
 Plug 'vim-airline/vim-airline', {'commit': 'f86f1e8' }  " 2017-06
