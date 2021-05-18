@@ -56,7 +56,7 @@ call plug#begin('~/.vim/plugged')
 " C-K Jumps to previous window (anti-clockwise)
 " C-Space Focus the current window, that is, place it in the master pane [M] & stacks all other windows in the stacked pane [S]
 " --------
-Plug 'spolu/dwm.vim'
+Plug 'xiejw/dwm.vim'
 " --------
 " airline.
 " --------
