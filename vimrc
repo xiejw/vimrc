@@ -200,7 +200,7 @@ autocmd FileType c :match MyCKeyword /\<_mut_\|_out_\>/
 autocmd FileType c :setlocal shiftwidth=8 tabstop=8 softtabstop=8
 
 " {{{3 go.
-autocmd FileType go :setlocal tw=100 colorcolumn=100
+autocmd FileType go :setlocal tw=80 colorcolumn=80
 autocmd FileType go :setlocal foldlevel=0 foldnestmax=2
 autocmd FileType go :setlocal foldmethod=indent noexpandtab
 autocmd FileType go :setlocal comments=:// fo=tcrqo
